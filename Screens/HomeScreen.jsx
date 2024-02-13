@@ -73,7 +73,7 @@ function HomeScreen({navigation}) {
         </Pressable>
       </View>
 
-      {/* <FlatList
+      <FlatList
         data={data}
         style={{height: '100%'}}
         renderItem={({item, idx}) => {
@@ -81,21 +81,21 @@ function HomeScreen({navigation}) {
         }}
         keyExtractor={(item, idx) => idx}
         nestedScrollEnabled
-      /> */}
+      />
 
-      <FlatList
+      {/* <FlatList
         contentContainerStyle={{backgroundColor: 'red'}}
         key={item => item?.id}
         data={data}
         renderItem={({item, index}) => <RenderItem item={item} />}
-      />
+      /> */}
     </ContainerWrapper>
   );
 }
 
 const RenderItem = ({item, idx}) => (
   <Pressable>
-    <Text style={{color: '#fff'}}>
+    <Text>
       {item?.name} == {item?.age}
     </Text>
   </Pressable>
