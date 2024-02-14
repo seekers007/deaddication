@@ -6,6 +6,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from './Screens/HomeScreen';
 import Registration from './Screens/Registration';
 import SummaryListing from './Screens/SummaryListing';
+import FormPage from './Screens/FormPage';
 
 const Stack = createStackNavigator();
 
@@ -25,6 +26,7 @@ function App() {
         <Stack.Screen name="Registration" component={Registration} />
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Summary" component={SummaryListing} />
+        <Stack.Screen name="FormPage" component={FormPage} />
       </Stack.Navigator>
     </NavigationContainer>
   );
