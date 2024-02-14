@@ -327,9 +327,13 @@ const FormDataReducer = (state, action) => {
       return {...state,substanceNotClassified: {...state.substanceNotClassified, routeOfAdministration: action.payload}};
     case 'SUBSTANCE_NOT_CLASSIFIED_FREQUENCY':
       return {...state,substanceNotClassified: {...state.substanceNotClassified, frequency : action.payload}};
-    case 'LAST_USAGE_QUANTITY':
+    case 'SUBSTANCE_NOT_CLASSIFIED_QUANTITY':
       return {...state,substanceNotClassified: {...state.substanceNotClassified, quantity: action.payload}};
-    case 'THERMOS':
+  case 'LAST_USAGE_LAST_DRINK_AND_DRUG':
+    return {...state,lastUsage:{...state.lastUsage,lastDrinkAndDrug:action.payload}};
+    case 'LAST_USAGE_DIAGNOSIS':
+    return {...state,lastUsage:{...state.lastUsage,diagnosis:action.payload}}; 
+      case 'THERMOS':
       return {...state};
     case 'INSOMINIA':
       return {...state};
