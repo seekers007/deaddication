@@ -1,10 +1,50 @@
 const initialStateFormData = {
   history: {
-    cannabis: '',
-    stimulants: '',
-    hillucinogens: '',
-    inhalants: '',
-    substanceNotClassified: '',
+    cannabis: {
+      ageOfFirstUse: '',
+      yearOfUse: '',
+      yearsOfExessiveUse: '',
+      specificTypeOfDrug: '',
+      routeOfAdministration: '',
+      frequency: '',
+      quantity: '',
+    },
+    stimulants: {
+      ageOfFirstUse: '',
+      yearOfUse: '',
+      yearsOfExessiveUse: '',
+      specificTypeOfDrug: '',
+      routeOfAdministration: '',
+      frequency: '',
+      quantity: '',
+    },
+    hillucinogens: {
+      ageOfFirstUse: '',
+      yearOfUse: '',
+      yearsOfExessiveUse: '',
+      specificTypeOfDrug: '',
+      routeOfAdministration: '',
+      frequency: '',
+      quantity: '',
+    },
+    inhalants: {
+      ageOfFirstUse: '',
+      yearOfUse: '',
+      yearsOfExessiveUse: '',
+      specificTypeOfDrug: '',
+      routeOfAdministration: '',
+      frequency: '',
+      quantity: '',
+    },
+    substanceNotClassified: {
+      ageOfFirstUse: '',
+      yearOfUse: '',
+      yearsOfExessiveUse: '',
+      specificTypeOfDrug: '',
+      routeOfAdministration: '',
+      frequency: '',
+      quantity: '',
+    },
     lastUsage: '',
     prevHistory: {
       thermos: '',
@@ -56,7 +96,7 @@ const initialStateFormData = {
       pinCode: '',
     },
 
-    identityCard: '',
+    identityCard: {value: '', name: ''},
     priorTreatment: {
       bool: '', //is true the details else not
       details: {
@@ -174,176 +214,253 @@ const initialStateFormData = {
 };
 const FormDataReducer = (state, action) => {
   switch (action.type) {
-    case 'CANNABIS':
-      break;
-    case 'STIMULANTS':
-      break;
-    case 'HILLUCINOGENS':
-      break;
-    case 'INHALANTS':
-      break;
-    case 'SUBSTANCE_NOT_CLASSIFIED':
-      break;
-    case 'LAST_USAGE':
-      break;
+    case 'CANNABIS_AGE_OF_FIRST_USE':
+      return {
+        ...state,
+        cannabis: {...state.cannabis, ageOfFirstUse: action.payload},
+      };
+    case 'CANNABIS_YEAR_OF_USE':
+      return {
+        ...state,
+        cannabis: {...state.cannabis, yearOfUse: action.payload},
+      };
+    case 'CANNABIS_YEARS_OF_EXECCSIVE_USE':
+      return {
+        ...state,
+        cannabis: {...state.cannabis, yearsOfExessiveUse: action.payload},
+      };
+    case 'CANNABIS_SPECIFIC_TYPE_OF_DRUG':
+      return {
+        ...state,
+        cannabis: {...state.cannabis, specificTypeOfDrug: action.payload},
+      };
+    case 'CANNABIS_ROUTE_OF_ADMINISTRATION':
+      return {
+        ...state,
+        cannabis: {...state.cannabis, routeOfAdministration: action.payload},
+      };
+    case 'CANNABIS_FREQUENCY':
+      return {...state};
+    case 'CANNABIS_QUANTITY':
+      return {...state};
+    case 'STIMULANTS_AGE_OF_FIRST_USE':
+      return {...state};
+    case 'STIMULANTS_YEAR_OF_USE':
+      return {...state};
+    case 'STIMULANTS_YEARS_OF_EXECCSIVE_USE':
+      return {...state};
+    case 'STIMULANTS_SPECIFIC_TYPE_OF_DRUG':
+      return {...state};
+    case 'STIMULANTS_ROUTE_OF_ADMINISTRATION':
+      return {...state};
+    case 'STIMULANTS_FREQUENCY':
+      return {...state};
+    case 'STIMULANTS_QUANTITY':
+      return {...state};
+    case 'HILLUCINOGENS_AGE_OF_FIRST_USE':
+      return {...state};
+    case 'HILLUCINOGENS_YEAR_OF_USE':
+      return {...state};
+    case 'HILLUCINOGENS_YEARS_OF_EXECCSIVE_USE':
+      return {...state};
+    case 'HILLUCINOGENS_SPECIFIC_TYPE_OF_DRUG':
+      return {...state};
+    case 'HILLUCINOGENS_ROUTE_OF_ADMINISTRATION':
+      return {...state};
+    case 'HILLUCINOGENS_FREQUENCY':
+      return {...state};
+    case 'HILLUCINOGENS_QUANTITY':
+      return {...state};
+    case 'INHALANTS_AGE_OF_FIRST_USE':
+      return {...state};
+    case 'INHALANTS_YEAR_OF_USE':
+      return {...state};
+    case 'INHALANTS_YEARS_OF_EXECCSIVE_USE':
+      return {...state};
+    case 'INHALANTS_SPECIFIC_TYPE_OF_DRUG':
+      return {...state};
+    case 'INHALANTS_ROUTE_OF_ADMINISTRATION':
+      return {...state};
+    case 'INHALANTS_FREQUENCY':
+      return {...state};
+    case 'INHALANTS_QUANTITY':
+      return {...state};
+    case 'SUBSTANCE_NOT_CLASSIFIED_AGE_OF_FIRST_USE':
+      return {...state};
+    case 'SUBSTANCE_NOT_CLASSIFIED_YEAR_OF_USE':
+      return {...state};
+    case 'SUBSTANCE_NOT_CLASSIFIED_YEAR_OF_USE':
+      return {...state};
+    case 'SUBSTANCE_NOT_CLASSIFIED_YEARS_OF_EXECCSIVE_USE':
+      return {...state};
+    case 'SUBSTANCE_NOT_CLASSIFIED_SPECIFIC_TYPE_OF_DRUG':
+      return {...state};
+    case 'SUBSTANCE_NOT_CLASSIFIED_ROUTE_OF_ADMINISTRATION':
+      return {...state};
+    case 'SUBSTANCE_NOT_CLASSIFIED_FREQUENCY':
+      return {...state};
+    case 'SUBSTANCE_NOT_CLASSIFIED_FREQUENCY':
+      return {...state};
+    case 'LAST_USAGE_QUANTITY':
+      return {...state};
     case 'THERMOS':
-      break;
+      return {...state};
     case 'INSOMINIA':
-      break;
+      return {...state};
     case 'DIARRHOEA':
-      break;
+      return {...state};
     case 'SEVERE_PAIN':
-      break;
+      return {...state};
     case 'RESTLESSNESS':
-      break;
+      return {...state};
     case 'OTHER_PSYCHIATRIC_COMPLICATION':
-      break;
+      return {...state};
     case 'DEPRESSION':
-      break;
+      return {...state};
     case 'SUICIDAL_IDEATION_AND_ATTEMPT':
-      break;
+      return {...state};
     case 'CONFUSION':
-      break;
+      return {...state};
     case 'AGGRESSIVE_OUTBURST':
-      break;
+      return {...state};
     case 'HALLUCINATION':
-      break;
+      return {...state};
     case 'PARANOIA':
-      break;
+      return {...state};
     case 'DIABETES':
-      break;
+      return {...state};
     case 'LEVER_DISORDER':
-      break;
+      return {...state};
     case 'EPILEPSY':
-      break;
+      return {...state};
     case 'RESPIRATORY_PROBLEMS':
-      break;
+      return {...state};
     case 'CARDIAC_PROBLEMS':
-      break;
+      return {...state};
     case 'USE_OF_TOBACCO_PRODUCT':
-      break;
+      return {...state};
     case 'USE_OF_TOBACCO_PRODUCT_DESCRIPTION':
-      break;
+      return {...state};
     case 'ALLERGIES_TO_SPECIFIC_DRUGS_IN_OTHER_INFO':
-      break;
+      return {...state};
     case 'NAME':
-      break;
+      return {...state};
     case 'REGISTRATION_NO':
-      break;
+      return {...state};
     case 'DATE_OF_REGISTRATION':
-      break;
+      return {...state};
     case 'DOB':
-      break;
+      return {...state};
     case 'SEX':
-      break;
+      return {...state};
     case 'EDUCATIONAL_BACKGROUND':
-      break;
+      return {...state};
     case 'RELIGION':
-      break;
+      return {...state};
     case 'LIVING_ARRANGEMENTS':
-      break;
+      return {...state};
     case 'PHONE_NO':
-      break;
+      return {...state};
     case 'GUARDIAN_PHONE_NO':
-      break;
+      return {...state};
     case 'ADDRESS_HOME_ADDRESS':
-      break;
+      return {...state};
     case 'ADDRESS_STREET':
-      break;
+      return {...state};
     case 'ADDRESS_CITY':
-      break;
+      return {...state};
     case 'ADDRESS_STATE':
-      break;
+      return {...state};
     case 'ADDRESS_PIN_CODE':
-      break;
+      return {...state};
     case 'IDENTITY_CARD':
-      break;
+      return {...state};
     case 'PRIOR_TREATMENT_BOOL':
-      break;
+      return {...state};
     case 'PRIOR_TREATMENT_DETAILS_PREVIOUS_REHAB':
-      break;
+      return {...state};
     case 'PRIOR_TREATMENT_DETAILS_DURATION_OF_RECOVERY':
-      break;
+      return {...state};
     case 'PRIOR_TREATMENT_DETAILS_FATHER_NAME':
-      break;
+      return {...state};
 
     // form2
     case 'FAMILY_DETAILS_FATHER_NAME':
-      break;
+      return {...state};
     case 'FAMILY_DETAILS_OCCUPATION':
-      break;
+      return {...state};
     case 'FAMILY_DETAILS_AGE':
-      break;
+      return {...state};
     case 'FAMILY_DETAILS_INCOME':
-      break;
+      return {...state};
     case 'FAMILY_DETAILS_FAMILY_SUPPORT_LIVING_WITH_FAMILY':
-      break;
+      return {...state};
     case 'FAMILY_DETAILS_FAMILY_SUPPORT_LIVING_WITH_OTHER':
-      break;
+      return {...state};
     case 'FAMILY_DETAILS_FAMILY_SUPPORT_LIVING_ALONE':
-      break;
+      return {...state};
     case 'FAMILY_DETAILS_FAMILY_SUPPORT_LIVING_ON_STREET':
-      break;
+      return {...state};
     case 'FAMILY_DETAILS_FAMILY_SUPPORT_SUPPORT_PERSON':
-      break;
+      return {...state};
     case 'FAMILY_DETAILS_FAMILY_SUPPORT_RELATION_OF_PATIENT':
-      break;
+      return {...state};
 
     // form 3
     case 'LEGAL_AND_FINANCES_EMPLOYED':
-      break;
+      return {...state};
     case 'LEGAL_AND_FINANCES_LAID_OFF':
-      break;
+      return {...state};
     case 'LEGAL_AND_FINANCES_EVER_RESIGNED':
-      break;
+      return {...state};
     case 'LEGAL_AND_FINANCES_IS_HEALTH_ENSURED':
-      break;
+      return {...state};
     case 'LEGAL_AND_FINANCES_SATISFIED_WITH_JOB':
-      break;
+      return {...state};
     case 'LEGAL_AND_FINANCES_OCCUPATION_HISTORY_OCCUPATION_HISTORY':
-      break;
+      return {...state};
     case 'LEGAL_AND_FINANCES_OCCUPATION_HISTORY_EMPLOYED':
-      break;
+      return {...state};
     case 'LEGAL_AND_FINANCES_OCCUPATION_HISTORY_LAID_OFF':
-      break;
+      return {...state};
     case 'LEGAL_AND_FINANCES_OCCUPATION_HISTORY_EVER_RESIGNED':
-      break;
+      return {...state};
     case 'LEGAL_AND_FINANCES_OCCUPATION_HISTORY_IS_HEALTH_ENSURED':
-      break;
+      return {...state};
     case 'LEGAL_AND_FINANCES_OCCUPATION_HISTORY_ SATISFIED_WITH_JOB':
-      break;
+      return {...state};
     case 'LEGAL_AND_FINANCES_OCCUPATIONAL_DAMAGE_TYPE_OF_WORK':
-      break;
+      return {...state};
     case 'LEGAL_AND_FINANCES_OCCUPATIONAL_DAMAGE_UNEMPLOYED_PERIOD':
-      break;
+      return {...state};
     case 'LEGAL_AND_FINANCES_OCCUPATIONAL_DAMAGE_REASON_OF_UNEMPLOYMENT':
-      break;
+      return {...state};
     case 'LEGAL_AND_FINANCES_OCCUPATIONAL_DAMAGE_DISCIPLINARY_ACTION_BOOL':
-      break;
+      return {...state};
     case 'LEGAL_AND_FINANCES_OCCUPATIONAL_DAMAGE_ABSTENEEISM':
-      break;
+      return {...state};
     case 'LEGAL_AND_FINANCES_OCCUPATIONAL_DAMAGE_WARNING_OR_MEMOS':
-      break;
+      return {...state};
     case 'LEGAL_AND_FINANCES_OCCUPATIONAL_DAMAGE_SUSPENSION_ORDER':
-      break;
+      return {...state};
     case 'LEGAL_AND_FINANCES_OCCUPATIONAL_DAMAGE_DISMISSAL_ORDER':
-      break;
+      return {...state};
     case 'LEGAL_AND_FINANCES_OCCUPATIONAL_DAMAGE_TRANSFER_ORDER':
-      break;
+      return {...state};
     case 'LEGAL_AND_FINANCES_LEGAL_HISTORY_FOR_ARREST_SALES_OF_DRUG':
-      break;
+      return {...state};
     case 'LEGAL_AND_FINANCES_LEGAL_HISTORY_FOR_ARREST_POSSISSION_OF_DRUG':
-      break;
+      return {...state};
     case 'LEGAL_AND_FINANCES_LEGAL_HISTORY_FOR_ARREST_DRUNK_INFLUENCED':
-      break;
+      return {...state};
     case 'LEGAL_AND_FINANCES_LEGAL_HISTORY_FOR_ARREST_DRUNK_AND_DRIVE':
-      break;
+      return {...state};
     case 'LEGAL_AND_FINANCES_LEGAL_HISTORY_FOR_ARREST_ACCIDENT_DRUNK_AND_DRIVE':
-      break;
+      return {...state};
     case 'LEGAL_AND_FINANCES_LEGAL_HISTORY_FOR_ARREST_ASSAULT':
-      break;
+      return {...state};
     case 'LEGAL_AND_FINANCES_LEGAL_HISTORY_FOR_ARREST_OTHER_REASON':
-      break;
+      return {...state};
 
     // form 4
     case 'TREATMENT_AND_GOALS_SHORT_TERM_GOALS_ABSTRAIN_ALCOHOL_AND_DRUGS_GOALS':
