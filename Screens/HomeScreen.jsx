@@ -45,63 +45,67 @@ function HomeScreen({navigation}) {
     },
   ];
 
+  const handleNav = () => {
+    navigation.navigate('FormPage');
+  };
   return (
     <ContainerWrapper>
-      <View
-        style={{
-          backgroundColor: isDarkMode ? Colors.black : Colors.white,
-        }}>
-        <Pressable
-          onPress={() => {
-            console.log('first');
-            navigation.navigate('Registration');
+      <View style={styles.fullHeight}>
+        <View
+          style={{
+            backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Text>Home Page</Text>
+          <Pressable
+            onPress={() => {
+              console.log('first');
+              navigation.navigate('Registration');
+            }}>
+            <Text>Home Page</Text>
+          </Pressable>
+        </View>
+
+        <FlatList
+          data={data}
+          style={{height: '100%'}}
+          renderItem={({item, idx}) => {
+            return <RenderItem item={item} idx={idx} />;
+          }}
+          keyExtractor={(item, idx) => idx}
+          nestedScrollEnabled
+        />
+        <Pressable style={styles.floatingBtn} onPress={handleNav}>
+          <Text style={{color: 'white'}}>Add</Text>
         </Pressable>
       </View>
-
-      <View
-        style={{
-          backgroundColor: isDarkMode ? Colors.black : Colors.white,
-        }}>
-        <Pressable
-          onPress={() => {
-            console.log('first');
-            navigation.navigate('Registration');
-          }}>
-          <Text>Home Page</Text>
-        </Pressable>
-      </View>
-
-      {/* <FlatList
-        data={data}
-        style={{height: '100%'}}
-        renderItem={({item, idx}) => {
-          return <RenderItem item={item} idx={idx} />;
-        }}
-        keyExtractor={(item, idx) => idx}
-        nestedScrollEnabled
-      /> */}
-
-      <FlatList
-        contentContainerStyle={{backgroundColor: 'red'}}
-        key={item => item?.id}
-        data={data}
-        renderItem={({item, index}) => <RenderItem item={item} />}
-      />
     </ContainerWrapper>
   );
 }
 
 const RenderItem = ({item, idx}) => (
   <Pressable>
-    <Text style={{color: '#fff'}}>
+    <Text>
       {item?.name} == {item?.age}
     </Text>
   </Pressable>
 );
 
 const styles = StyleSheet.create({
+  floatingBtn: {
+    backgroundColor: 'black',
+    width: 60,
+    height: 60,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 100,
+    position: 'absolute',
+    bottom: 50,
+    right: 40,
+  },
+  fullHeight: {
+    height: '100%',
+    backgroundColor: 'red',
+    position: 'relative',
+  },
   sectionContainer: {
     marginTop: 32,
     paddingHorizontal: 24,

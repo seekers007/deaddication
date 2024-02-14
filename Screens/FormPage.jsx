@@ -1,15 +1,26 @@
 import React from 'react';
-import {StyleSheet, Text, useColorScheme} from 'react-native';
+import {
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  useColorScheme,
+  View,
+} from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import ContainerWrapper from '../components/ContainerWrapper';
 
-function SummaryListing() {
+function FormPage() {
   const isDarkMode = useColorScheme() === 'dark';
+
+  const backgroundStyle = {
+    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+  };
 
   return (
     <ContainerWrapper>
-      <Text>Summary Listing of the patient</Text>
+      <Text>Form data </Text>
     </ContainerWrapper>
   );
 }
@@ -33,4 +44,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SummaryListing;
+export default FormPage;
