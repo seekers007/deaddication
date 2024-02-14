@@ -334,45 +334,45 @@ const FormDataReducer = (state, action) => {
     case 'LAST_USAGE_DIAGNOSIS':
     return {...state,lastUsage:{...state.lastUsage,diagnosis:action.payload}}; 
       case 'THERMOS':
-      return {...state};
+      return {...state,prevHistory:{...state.prevHistory,thermos:action.payload}};
     case 'INSOMINIA':
-      return {...state};
+      return {...state,prevHistory:{...state.prevHistory,insominia:action.payload}};
     case 'DIARRHOEA':
-      return {...state};
+      return {...state,prevHistory:{...state.prevHistory,diarrhoea:action.payload}};
     case 'SEVERE_PAIN':
-      return {...state};
+      return {...state,prevHistory:{...state.prevHistory,severePain:action.payload}};
     case 'RESTLESSNESS':
-      return {...state};
+      return {...state,prevHistory:{...state.prevHistory,restlessness:action.payload}};
     case 'OTHER_PSYCHIATRIC_COMPLICATION':
-      return {...state};
+      return {...state,prevHistory:{...state.prevHistory,otherPsychiatricComplecation:action.payload}};
     case 'DEPRESSION':
-      return {...state};
+      return {...state,mentalHealthAssisment:{...state.mentalHealthAssisment,depression:action.payload}};
     case 'SUICIDAL_IDEATION_AND_ATTEMPT':
-      return {...state};
+      return {...state,mentalHealthAssisment:{...state.mentalHealthAssisment,suicidalIdeationAndAttempt:action.payload}};
     case 'CONFUSION':
-      return {...state};
+      return {...state,mentalHealthAssisment:{...state.mentalHealthAssisment,confusion:action.payload}};
     case 'AGGRESSIVE_OUTBURST':
-      return {...state};
+      return {...state,mentalHealthAssisment:{...state.mentalHealthAssisment,confusion:action.payload}};
     case 'HALLUCINATION':
-      return {...state};
+      return {...state,mentalHealthAssisment:{...state.mentalHealthAssisment,aggresiveOutburst:action.payload}};
     case 'PARANOIA':
-      return {...state};
+      return {...state,mentalHealthAssisment:{...state.mentalHealthAssisment,paranoia:action.payload}};
     case 'DIABETES':
-      return {...state};
+      return {...state,chronicHealthProblem:{...state.chronicHealthProblem,diabetes:action.payload}};
     case 'LEVER_DISORDER':
-      return {...state};
+      return {...state,chronicHealthProblem:{...state.chronicHealthProblem,leverDisorder:action.payload}};
     case 'EPILEPSY':
-      return {...state};
+      return {...state,chronicHealthProblem:{...state.chronicHealthProblem,epilepsy:action.payload}};
     case 'RESPIRATORY_PROBLEMS':
-      return {...state};
+      return {...state,chronicHealthProblem:{...state.chronicHealthProblem,respiratoryProblems:action.payload}};
     case 'CARDIAC_PROBLEMS':
-      return {...state};
+      return {...state,chronicHealthProblem:{...state.chronicHealthProblem,cardiacProblems:action.payload}};
     case 'USE_OF_TOBACCO_PRODUCT':
-      return {...state};
+      return {...state,otherInfo:{...state.otherInfo,useOfTobacoProduct:action.payload}};
     case 'USE_OF_TOBACCO_PRODUCT_DESCRIPTION':
-      return {...state};
+      return {...state,otherInfo:{...state.otherInfo,description:action.payload}};
     case 'ALLERGIES_TO_SPECIFIC_DRUGS_IN_OTHER_INFO':
-      return {...state};
+      return {...state,otherInfo:{...state.otherInfo,allergiesToSpecificDrugs:action.payload}};
     case 'NAME':
       return {...state};
     case 'REGISTRATION_NO':
