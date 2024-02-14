@@ -45,7 +45,10 @@ const initialStateFormData = {
       frequency: '',
       quantity: '',
     },
-    lastUsage: '',
+    lastUsage: {
+      lastDrinkAndDrug:'',
+      diagnosis:'',
+    },
     prevHistory: {
       thermos: '',
       insominia: '',
@@ -240,69 +243,92 @@ const FormDataReducer = (state, action) => {
         cannabis: {...state.cannabis, routeOfAdministration: action.payload},
       };
     case 'CANNABIS_FREQUENCY':
-      return {...state};
+      return {
+        ...state,
+        cannabis: {...state.cannabis, frequency: action.payload},
+      };
     case 'CANNABIS_QUANTITY':
-      return {...state};
+      return {
+        ...state,
+        cannabis: {...state.cannabis, quantity: action.payload},
+      };
     case 'STIMULANTS_AGE_OF_FIRST_USE':
-      return {...state};
+      return {
+        ...state,
+        stimulants: {...state.stimulants, ageOfFirstUse: action.payload},
+      };
     case 'STIMULANTS_YEAR_OF_USE':
-      return {...state};
+      return {
+        ...state,
+        stimulants: {...state.stimulants, yearOfUse: action.payload},
+      };
     case 'STIMULANTS_YEARS_OF_EXECCSIVE_USE':
-      return {...state};
+      return {
+        ...state,
+        stimulants: {...state.stimulants, yearsOfExessiveUse: action.payload},
+      };
     case 'STIMULANTS_SPECIFIC_TYPE_OF_DRUG':
-      return {...state};
+      return {...state,
+        stimulants: {...state.stimulants, specificTypeOfDrug: action.payload}},;
     case 'STIMULANTS_ROUTE_OF_ADMINISTRATION':
-      return {...state};
+      return {...state,
+        stimulants: {...state.stimulants, routeOfAdministration: action.payload}};
     case 'STIMULANTS_FREQUENCY':
-      return {...state};
+      return {...state,
+        stimulants: {...state.stimulants, frequency: action.payload}};
     case 'STIMULANTS_QUANTITY':
-      return {...state};
+      return {...state,
+        stimulants: {...state.stimulants, quantity: action.payload}};
     case 'HILLUCINOGENS_AGE_OF_FIRST_USE':
-      return {...state};
+      return {...state,
+        hillucinogens: {...state.hillucinogens, ageOfFirstUse: action.payload}};
     case 'HILLUCINOGENS_YEAR_OF_USE':
-      return {...state};
+      return {...state,
+        hillucinogens: {...state.hillucinogens, yearOfUse: action.payload}};
     case 'HILLUCINOGENS_YEARS_OF_EXECCSIVE_USE':
-      return {...state};
+      return {...state,
+        hillucinogens: {...state.hillucinogens, yearsOfExessiveUse: action.payload}};
     case 'HILLUCINOGENS_SPECIFIC_TYPE_OF_DRUG':
-      return {...state};
+      return {...state,
+        hillucinogens: {...state.hillucinogens, specificTypeOfDrug: action.payload}};
     case 'HILLUCINOGENS_ROUTE_OF_ADMINISTRATION':
-      return {...state};
+      return {...state,
+        hillucinogens: {...state.hillucinogens, routeOfAdministration: action.payload}};
     case 'HILLUCINOGENS_FREQUENCY':
-      return {...state};
+      return {...state,
+        hillucinogens: {...state.hillucinogens, frequency: action.payload}};
     case 'HILLUCINOGENS_QUANTITY':
-      return {...state};
+      return {...state,
+        hillucinogens: {...state.hillucinogens, quantity: action.payload}};
     case 'INHALANTS_AGE_OF_FIRST_USE':
-      return {...state};
+      return {...state,
+        inhalants: {...state.inhalants, ageOfFirstUse: action.payload}};
     case 'INHALANTS_YEAR_OF_USE':
-      return {...state};
+      return {...state, inhalants: {...state.inhalants,yearOfUse : action.payload}};
     case 'INHALANTS_YEARS_OF_EXECCSIVE_USE':
-      return {...state};
+      return {...state, inhalants: {...state.inhalants, yearsOfExessiveUse: action.payload}};
     case 'INHALANTS_SPECIFIC_TYPE_OF_DRUG':
-      return {...state};
+      return {...state, inhalants: {...state.inhalants, specificTypeOfDrug: action.payload}};
     case 'INHALANTS_ROUTE_OF_ADMINISTRATION':
-      return {...state};
+      return {...state, inhalants: {...state.inhalants, routeOfAdministration: action.payload}};
     case 'INHALANTS_FREQUENCY':
-      return {...state};
+      return {...state, inhalants: {...state.inhalants, frequency : action.payload}};
     case 'INHALANTS_QUANTITY':
-      return {...state};
+      return {...state, inhalants: {...state.inhalants, quantity: action.payload}};
     case 'SUBSTANCE_NOT_CLASSIFIED_AGE_OF_FIRST_USE':
-      return {...state};
+      return {...state, substanceNotClassified: {...state.substanceNotClassified, ageOfFirstUse: action.payload}};
     case 'SUBSTANCE_NOT_CLASSIFIED_YEAR_OF_USE':
-      return {...state};
-    case 'SUBSTANCE_NOT_CLASSIFIED_YEAR_OF_USE':
-      return {...state};
+      return {...state,substanceNotClassified: {...state.substanceNotClassified, yearOfUse: action.payload}};
     case 'SUBSTANCE_NOT_CLASSIFIED_YEARS_OF_EXECCSIVE_USE':
-      return {...state};
+      return {...state,substanceNotClassified: {...state.substanceNotClassified, yearsOfExessiveUse: action.payload}};
     case 'SUBSTANCE_NOT_CLASSIFIED_SPECIFIC_TYPE_OF_DRUG':
-      return {...state};
+      return {...state,substanceNotClassified: {...state.substanceNotClassified, specificTypeOfDrug: action.payload}};
     case 'SUBSTANCE_NOT_CLASSIFIED_ROUTE_OF_ADMINISTRATION':
-      return {...state};
+      return {...state,substanceNotClassified: {...state.substanceNotClassified, routeOfAdministration: action.payload}};
     case 'SUBSTANCE_NOT_CLASSIFIED_FREQUENCY':
-      return {...state};
-    case 'SUBSTANCE_NOT_CLASSIFIED_FREQUENCY':
-      return {...state};
+      return {...state,substanceNotClassified: {...state.substanceNotClassified, frequency : action.payload}};
     case 'LAST_USAGE_QUANTITY':
-      return {...state};
+      return {...state,substanceNotClassified: {...state.substanceNotClassified, quantity: action.payload}};
     case 'THERMOS':
       return {...state};
     case 'INSOMINIA':
