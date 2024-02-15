@@ -1,12 +1,17 @@
-import React, {useState} from 'react';
+import React, {useContext, useReducer, useState} from 'react';
 import {TextInput, View} from 'react-native';
 import {Text, Stack} from '@react-native-material/core';
 // import CustomSwitch from './CustomSwitch';
 import CustomInput, {CustomInputStandard} from '../CustomInputBox';
 import CustomCheckbox from '../CustomCheckbox';
 import CustomSwitch from '../CustomSwitch';
+import {FormDataDetailContext} from '../../Context/FormDataContext';
 
 const FormStep1 = ({placeholder}) => {
+  const {formData, dispatchFormData} = useContext(FormDataDetailContext);
+  const checkBoxhandler = (name, value) => {
+    dispatchFormData({type: name, payload: value});
+  };
   return (
     <View
       style={{
@@ -25,11 +30,36 @@ const FormStep1 = ({placeholder}) => {
             flexDirection: 'column',
             rowGap: 8,
           }}>
-          <CustomCheckbox label="DEPRESSTION" />
-          <CustomCheckbox label="SUICIDAL IDEATIN/ATTEMPTS" />
-          <CustomCheckbox label="CONFUSION" />
-          <CustomCheckbox label="DALLUCINATIONS" />
-          <CustomCheckbox label="PARANOIA" />
+          <CustomCheckbox
+            label="DEPRESSION"
+            name={'DEPRESSION'}
+            onChange={checkBoxhandler}
+            state={formData?.history?.mentalHealthAssisment?.depression}
+          />
+          <CustomCheckbox
+            label="SUICIDAL IDEATIN/ATTEMPTS"
+            name={'SUICIDAL_IDEATION_AND_ATTEMPT'}
+            onChange={checkBoxhandler}
+            state={formData?.history?.mentalHealthAssisment?.depression}
+          />
+          <CustomCheckbox
+            label="CONFUSION"
+            name={'CONFUSION'}
+            onChange={checkBoxhandler}
+            state={formData?.history?.mentalHealthAssisment?.depression}
+          />
+          <CustomCheckbox
+            label="HALLUCINATION"
+            name={'HALLUCINATION'}
+            onChange={checkBoxhandler}
+            state={formData?.history?.mentalHealthAssisment?.depression}
+          />
+          <CustomCheckbox
+            label="PARANOIA"
+            name={'PARANOIA'}
+            onChange={checkBoxhandler}
+            state={formData?.history?.mentalHealthAssisment?.depression}
+          />
         </View>
       </View>
       <View>
@@ -42,11 +72,14 @@ const FormStep1 = ({placeholder}) => {
             flexDirection: 'column',
             rowGap: 8,
           }}>
-          <CustomSwitch label="DEPRESSTION" />
-          <CustomSwitch label="SUICIDAL IDEATIN/ATTEMPTS" />
-          <CustomSwitch label="CONFUSION" />
-          <CustomSwitch label="DALLUCINATIONS" />
-          <CustomSwitch label="PARANOIA" />
+          <CustomSwitch label="DIABETES" name={'DIABETES'} />
+          <CustomSwitch label="LEVER_DISORDER" name={'LEVER_DISORDER'} />
+          <CustomSwitch label="EPILEPSY" name={'EPILEPSY'} />
+          <CustomSwitch
+            label="RESPIRATORY_PROBLEMS"
+            name={'RESPIRATORY_PROBLEMS'}
+          />
+          <CustomSwitch label="CARDIAC_PROBLEMS" name={'CARDIAC_PROBLEMS'} />
         </View>
       </View>
       <View>
@@ -59,9 +92,19 @@ const FormStep1 = ({placeholder}) => {
             flexDirection: 'column',
             rowGap: 8,
           }}>
-          <CustomSwitch label="USE OF TOBACCO PRODUCTS" />
-          <CustomInputStandard label="IF YES,SPECIFY" />
-          <CustomInput label="KNOWN ALLERGIES TO SPECIFIC DRUGS" />
+          <CustomSwitch
+            label="USE OF TOBACCO PRODUCTS"
+            name={'USE_OF_TOBACCO_PRODUCT'}
+          />
+          <CustomInputStandard
+            label="IF YES,SPECIFY"
+            name={'USE_OF_TOBACCO_PRODUCT_DESCRIPTION'}
+          />
+          <CustomInput
+            label="KNOWN ALLERGIES TO SPECIFIC DRUGS"
+            name={'ALLERGIES_TO_SPECIFIC_DRUGS_IN_OTHER_INFO'}
+            dispatchFormData={dispatchFormData}
+          />
         </View>
       </View>
     </View>
