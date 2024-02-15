@@ -1,7 +1,6 @@
 import React, {useContext, useReducer, useState} from 'react';
 import {TextInput, View} from 'react-native';
 import {Text, Stack} from '@react-native-material/core';
-// import CustomSwitch from './CustomSwitch';
 import CustomInput, {CustomInputStandard} from '../CustomInputBox';
 import CustomCheckbox from '../CustomCheckbox';
 import CustomSwitch from '../CustomSwitch';
@@ -11,6 +10,10 @@ const FormStep1 = ({placeholder}) => {
   const {formData, dispatchFormData} = useContext(FormDataDetailContext);
   const checkBoxhandler = (name, value) => {
     dispatchFormData({type: name, payload: value});
+  };
+
+  const textBoxHandler = (type, value) => {
+    dispatchFormData({type: type, payload: value});
   };
   return (
     <View
@@ -126,11 +129,14 @@ const FormStep1 = ({placeholder}) => {
           <CustomInputStandard
             label="IF YES,SPECIFY"
             name={'USE_OF_TOBACCO_PRODUCT_DESCRIPTION'}
+            onChange={textBoxHandler}
+            state={formData?.history?.otherInfo?.description}
           />
           <CustomInput
             label="KNOWN ALLERGIES TO SPECIFIC DRUGS"
             name={'ALLERGIES_TO_SPECIFIC_DRUGS_IN_OTHER_INFO'}
-            dispatchFormData={dispatchFormData}
+            onChange={textBoxHandler}
+            state={formData?.history?.otherInfo?.allergiesToSpecificDrugs}
           />
         </View>
       </View>
