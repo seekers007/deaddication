@@ -1,21 +1,15 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 import {Switch} from 'react-native-switch';
 
-const CustomSwitch = ({label}) => {
-  const [isEnabled, setIsEnabled] = useState(false);
-
-  const toggleSwitch = () => {
-    setIsEnabled(previousState => !previousState);
-  };
-
+const CustomSwitch = ({label, state, onChange, name}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.label}>{label}</Text>
 
       <Switch
-        value={isEnabled}
-        onValueChange={toggleSwitch}
+        value={state}
+        onValueChange={() => onChange(name, !state)}
         disabled={false}
         activeText={'On'}
         inActiveText={'Off'}
