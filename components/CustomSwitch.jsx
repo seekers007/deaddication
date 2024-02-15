@@ -33,19 +33,18 @@ const CustomSwitch = ({label}) => {
         activeTextStyle={{paddingHorizontal: 5}}
         inactiveTextStyle={{paddingHorizontal: 5}}
         backgroundActive={'black'}
-        backgroundInactive={'green'}
+        backgroundInactive={'grey'}
         circleActiveColor={'#fff'}
         circleInActiveColor={'#fff'}
         changeValueImmediately={true}
         outerCircleStyle={{
-          backgroundColor: 'black',
           borderRadius: 300,
           justifyContent: 'space-between',
         }}
         renderActiveText={true}
         renderInActiveText={true}
-        switchLeftPx={0}
-        switchRightPx={0}
+        switchLeftPx={10}
+        switchRightPx={10}
         switchWidthMultiplier={2}
         switchBorderRadius={30}
       />
