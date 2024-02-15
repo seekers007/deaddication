@@ -40,25 +40,28 @@ const FormStep1 = ({placeholder}) => {
             label="SUICIDAL IDEATIN/ATTEMPTS"
             name={'SUICIDAL_IDEATION_AND_ATTEMPT'}
             onChange={checkBoxhandler}
-            state={formData?.history?.mentalHealthAssisment?.depression}
+            state={
+              formData?.history?.mentalHealthAssisment
+                ?.suicidalIdeationAndAttempt
+            }
           />
           <CustomCheckbox
             label="CONFUSION"
             name={'CONFUSION'}
             onChange={checkBoxhandler}
-            state={formData?.history?.mentalHealthAssisment?.depression}
+            state={formData?.history?.mentalHealthAssisment?.confusion}
           />
           <CustomCheckbox
             label="HALLUCINATION"
             name={'HALLUCINATION'}
             onChange={checkBoxhandler}
-            state={formData?.history?.mentalHealthAssisment?.depression}
+            state={formData?.history?.mentalHealthAssisment?.hallucination}
           />
           <CustomCheckbox
             label="PARANOIA"
             name={'PARANOIA'}
             onChange={checkBoxhandler}
-            state={formData?.history?.mentalHealthAssisment?.depression}
+            state={formData?.history?.mentalHealthAssisment?.paranoia}
           />
         </View>
       </View>
@@ -72,14 +75,36 @@ const FormStep1 = ({placeholder}) => {
             flexDirection: 'column',
             rowGap: 8,
           }}>
-          <CustomSwitch label="DIABETES" name={'DIABETES'} />
-          <CustomSwitch label="LEVER_DISORDER" name={'LEVER_DISORDER'} />
-          <CustomSwitch label="EPILEPSY" name={'EPILEPSY'} />
+          <CustomSwitch
+            label="DIABETES"
+            name={'DIABETES'}
+            onChange={checkBoxhandler}
+            state={formData?.history?.chronicHealthProblem?.diabetes}
+          />
+          <CustomSwitch
+            label="LEVER_DISORDER"
+            name={'LEVER_DISORDER'}
+            onChange={checkBoxhandler}
+            state={formData?.history?.chronicHealthProblem?.leverDisorder}
+          />
+          <CustomSwitch
+            label="EPILEPSY"
+            name={'EPILEPSY'}
+            onChange={checkBoxhandler}
+            state={formData?.history?.chronicHealthProblem?.epilepsy}
+          />
           <CustomSwitch
             label="RESPIRATORY_PROBLEMS"
             name={'RESPIRATORY_PROBLEMS'}
+            onChange={checkBoxhandler}
+            state={formData?.history?.chronicHealthProblem?.respiratoryProblems}
           />
-          <CustomSwitch label="CARDIAC_PROBLEMS" name={'CARDIAC_PROBLEMS'} />
+          <CustomSwitch
+            label="CARDIAC_PROBLEMS"
+            name={'CARDIAC_PROBLEMS'}
+            onChange={checkBoxhandler}
+            state={formData?.history?.chronicHealthProblem?.cardiacProblems}
+          />
         </View>
       </View>
       <View>
@@ -95,6 +120,8 @@ const FormStep1 = ({placeholder}) => {
           <CustomSwitch
             label="USE OF TOBACCO PRODUCTS"
             name={'USE_OF_TOBACCO_PRODUCT'}
+            onChange={checkBoxhandler}
+            state={formData?.history?.otherInfo?.useOfTobacoProduct}
           />
           <CustomInputStandard
             label="IF YES,SPECIFY"

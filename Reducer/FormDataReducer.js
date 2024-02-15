@@ -694,7 +694,7 @@ const FormDataReducer = (state, action) => {
           ...state.history,
           mentalHealthAssisment: {
             ...state.history.mentalHealthAssisment,
-            confusion: action.payload,
+            aggresiveOutburst: action.payload,
           },
         },
       };
@@ -705,7 +705,7 @@ const FormDataReducer = (state, action) => {
           ...state.history,
           mentalHealthAssisment: {
             ...state.history.mentalHealthAssisment,
-            aggresiveOutburst: action.payload,
+            hallucination: action.payload,
           },
         },
       };
