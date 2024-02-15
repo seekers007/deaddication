@@ -12,15 +12,6 @@ const CustomSwitch = ({label}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.label}>{label}</Text>
-      {/* <Switch
-        onValueChange={toggleSwitch}
-        value={isEnabled}
-        backgroundActive={'black'}
-        switchLeftPx={2}
-        switchRightPx={2}
-        activeText={'Yes'}
-        inActiveText={'No'}
-      /> */}
 
       <Switch
         value={isEnabled}
@@ -63,5 +54,7 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 16,
+    color: 'black',
+    width: '70%',
   },
 });

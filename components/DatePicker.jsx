@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {View, Button, Platform, Text} from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
-const App = () => {
+const Datepicker = () => {
   const [date, setDate] = useState(new Date());
   const [showPicker, setShowPicker] = useState(false);
 
@@ -35,4 +35,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Datepicker;
