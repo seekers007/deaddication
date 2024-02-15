@@ -223,358 +223,586 @@ const FormDataReducer = (state, action) => {
     case 'CANNABIS_AGE_OF_FIRST_USE':
       return {
         ...state,
-        cannabis: {...state.cannabis, ageOfFirstUse: action.payload},
+        history: {
+          ...state.history,
+          cannabis: {...state.history.cannabis, ageOfFirstUse: action.payload},
+        },
       };
     case 'CANNABIS_YEAR_OF_USE':
       return {
         ...state,
-        cannabis: {...state.cannabis, yearOfUse: action.payload},
+        history: {
+          ...state.history,
+          cannabis: {...state.history.cannabis, yearOfUse: action.payload},
+        },
       };
     case 'CANNABIS_YEARS_OF_EXECCSIVE_USE':
       return {
         ...state,
-        cannabis: {...state.cannabis, yearsOfExessiveUse: action.payload},
+        history: {
+          ...state.history,
+          cannabis: {
+            ...state.history.cannabis,
+            yearsOfExessiveUse: action.payload,
+          },
+        },
       };
     case 'CANNABIS_SPECIFIC_TYPE_OF_DRUG':
       return {
         ...state,
-        cannabis: {...state.cannabis, specificTypeOfDrug: action.payload},
+        history: {
+          ...state.history,
+          cannabis: {
+            ...state.history.cannabis,
+            specificTypeOfDrug: action.payload,
+          },
+        },
       };
     case 'CANNABIS_ROUTE_OF_ADMINISTRATION':
       return {
         ...state,
-        cannabis: {...state.cannabis, routeOfAdministration: action.payload},
+        history: {
+          ...state.history,
+          cannabis: {
+            ...state.history.cannabis,
+            routeOfAdministration: action.payload,
+          },
+        },
       };
     case 'CANNABIS_FREQUENCY':
       return {
         ...state,
-        cannabis: {...state.cannabis, frequency: action.payload},
+        history: {
+          ...state.history,
+          cannabis: {...state.history.cannabis, frequency: action.payload},
+        },
       };
     case 'CANNABIS_QUANTITY':
       return {
         ...state,
-        cannabis: {...state.cannabis, quantity: action.payload},
+        history: {
+          ...state.history,
+          cannabis: {...state.history.cannabis, quantity: action.payload},
+        },
       };
     case 'STIMULANTS_AGE_OF_FIRST_USE':
       return {
         ...state,
-        stimulants: {...state.stimulants, ageOfFirstUse: action.payload},
+        history: {
+          ...state.history,
+          stimulants: {
+            ...state.history.stimulants,
+            ageOfFirstUse: action.payload,
+          },
+        },
       };
     case 'STIMULANTS_YEAR_OF_USE':
       return {
         ...state,
-        stimulants: {...state.stimulants, yearOfUse: action.payload},
+        history: {
+          ...state.history,
+          stimulants: {...state.history.stimulants, yearOfUse: action.payload},
+        },
       };
     case 'STIMULANTS_YEARS_OF_EXECCSIVE_USE':
       return {
         ...state,
-        stimulants: {...state.stimulants, yearsOfExessiveUse: action.payload},
+        history: {
+          ...state.history,
+          stimulants: {
+            ...state.history.stimulants,
+            yearsOfExessiveUse: action.payload,
+          },
+        },
       };
     case 'STIMULANTS_SPECIFIC_TYPE_OF_DRUG':
       return {
         ...state,
-        stimulants: {...state.stimulants, specificTypeOfDrug: action.payload},
+        history: {
+          ...state.history,
+          stimulants: {
+            ...state.history.stimulants,
+            specificTypeOfDrug: action.payload,
+          },
+        },
       };
     case 'STIMULANTS_ROUTE_OF_ADMINISTRATION':
       return {
         ...state,
-        stimulants: {
-          ...state.stimulants,
-          routeOfAdministration: action.payload,
+        history: {
+          ...state.history,
+          stimulants: {
+            ...state.history.stimulants,
+            routeOfAdministration: action.payload,
+          },
         },
       };
     case 'STIMULANTS_FREQUENCY':
       return {
         ...state,
-        stimulants: {...state.stimulants, frequency: action.payload},
+        history: {
+          ...state.history,
+          stimulants: {...state.history.stimulants, frequency: action.payload},
+        },
       };
     case 'STIMULANTS_QUANTITY':
       return {
         ...state,
-        stimulants: {...state.stimulants, quantity: action.payload},
+        history: {
+          ...state.history,
+          stimulants: {...state.history.stimulants, quantity: action.payload},
+        },
       };
     case 'HILLUCINOGENS_AGE_OF_FIRST_USE':
       return {
         ...state,
-        hillucinogens: {...state.hillucinogens, ageOfFirstUse: action.payload},
+        history: {
+          ...state.history,
+          hillucinogens: {
+            ...state.history.hillucinogens,
+            ageOfFirstUse: action.payload,
+          },
+        },
       };
     case 'HILLUCINOGENS_YEAR_OF_USE':
       return {
         ...state,
-        hillucinogens: {...state.hillucinogens, yearOfUse: action.payload},
+        history: {
+          ...state.history,
+          hillucinogens: {
+            ...state.history.hillucinogens,
+            yearOfUse: action.payload,
+          },
+        },
       };
     case 'HILLUCINOGENS_YEARS_OF_EXECCSIVE_USE':
       return {
         ...state,
-        hillucinogens: {
-          ...state.hillucinogens,
-          yearsOfExessiveUse: action.payload,
+        history: {
+          ...state.history,
+          hillucinogens: {
+            ...state.history.hillucinogens,
+            yearsOfExessiveUse: action.payload,
+          },
         },
       };
     case 'HILLUCINOGENS_SPECIFIC_TYPE_OF_DRUG':
       return {
         ...state,
-        hillucinogens: {
-          ...state.hillucinogens,
-          specificTypeOfDrug: action.payload,
+        history: {
+          ...state.history,
+          hillucinogens: {
+            ...state.history.hillucinogens,
+            specificTypeOfDrug: action.payload,
+          },
         },
       };
     case 'HILLUCINOGENS_ROUTE_OF_ADMINISTRATION':
       return {
         ...state,
-        hillucinogens: {
-          ...state.hillucinogens,
-          routeOfAdministration: action.payload,
+        history: {
+          ...state.history,
+          hillucinogens: {
+            ...state.history.hillucinogens,
+            routeOfAdministration: action.payload,
+          },
         },
       };
     case 'HILLUCINOGENS_FREQUENCY':
       return {
         ...state,
-        hillucinogens: {...state.hillucinogens, frequency: action.payload},
+        history: {
+          ...state.history,
+          hillucinogens: {
+            ...state.history.hillucinogens,
+            frequency: action.payload,
+          },
+        },
       };
     case 'HILLUCINOGENS_QUANTITY':
       return {
         ...state,
-        hillucinogens: {...state.hillucinogens, quantity: action.payload},
+        history: {
+          ...state.history,
+          hillucinogens: {
+            ...state.history.hillucinogens,
+            quantity: action.payload,
+          },
+        },
       };
     case 'INHALANTS_AGE_OF_FIRST_USE':
       return {
         ...state,
-        inhalants: {...state.inhalants, ageOfFirstUse: action.payload},
+        history: {
+          ...state.history,
+          inhalants: {
+            ...state.history.inhalants,
+            ageOfFirstUse: action.payload,
+          },
+        },
       };
     case 'INHALANTS_YEAR_OF_USE':
       return {
         ...state,
-        inhalants: {...state.inhalants, yearOfUse: action.payload},
+        history: {
+          ...state.history,
+          inhalants: {...state.history.inhalants, yearOfUse: action.payload},
+        },
       };
     case 'INHALANTS_YEARS_OF_EXECCSIVE_USE':
       return {
         ...state,
-        inhalants: {...state.inhalants, yearsOfExessiveUse: action.payload},
+        history: {
+          ...state.history,
+          inhalants: {
+            ...state.history.inhalants,
+            yearsOfExessiveUse: action.payload,
+          },
+        },
       };
     case 'INHALANTS_SPECIFIC_TYPE_OF_DRUG':
       return {
         ...state,
-        inhalants: {...state.inhalants, specificTypeOfDrug: action.payload},
+        history: {
+          ...state.history,
+          inhalants: {
+            ...state.history.inhalants,
+            specificTypeOfDrug: action.payload,
+          },
+        },
       };
     case 'INHALANTS_ROUTE_OF_ADMINISTRATION':
       return {
         ...state,
-        inhalants: {...state.inhalants, routeOfAdministration: action.payload},
+        history: {
+          ...state.history,
+          inhalants: {
+            ...state.history.inhalants,
+            routeOfAdministration: action.payload,
+          },
+        },
       };
     case 'INHALANTS_FREQUENCY':
       return {
         ...state,
-        inhalants: {...state.inhalants, frequency: action.payload},
+        history: {
+          ...state.history,
+          inhalants: {...state.history.inhalants, frequency: action.payload},
+        },
       };
     case 'INHALANTS_QUANTITY':
       return {
         ...state,
-        inhalants: {...state.inhalants, quantity: action.payload},
+        history: {
+          ...state.history,
+          inhalants: {...state.history.inhalants, quantity: action.payload},
+        },
       };
     case 'SUBSTANCE_NOT_CLASSIFIED_AGE_OF_FIRST_USE':
       return {
         ...state,
-        substanceNotClassified: {
-          ...state.substanceNotClassified,
-          ageOfFirstUse: action.payload,
+        history: {
+          ...state.history,
+          substanceNotClassified: {
+            ...state.history.substanceNotClassified,
+            ageOfFirstUse: action.payload,
+          },
         },
       };
     case 'SUBSTANCE_NOT_CLASSIFIED_YEAR_OF_USE':
       return {
         ...state,
-        substanceNotClassified: {
-          ...state.substanceNotClassified,
-          yearOfUse: action.payload,
+        history: {
+          ...state.history,
+          substanceNotClassified: {
+            ...state.history.substanceNotClassified,
+            yearOfUse: action.payload,
+          },
         },
       };
     case 'SUBSTANCE_NOT_CLASSIFIED_YEARS_OF_EXECCSIVE_USE':
       return {
         ...state,
-        substanceNotClassified: {
-          ...state.substanceNotClassified,
-          yearsOfExessiveUse: action.payload,
+        history: {
+          ...state.history,
+          substanceNotClassified: {
+            ...state.history.substanceNotClassified,
+            yearsOfExessiveUse: action.payload,
+          },
         },
       };
     case 'SUBSTANCE_NOT_CLASSIFIED_SPECIFIC_TYPE_OF_DRUG':
       return {
         ...state,
-        substanceNotClassified: {
-          ...state.substanceNotClassified,
-          specificTypeOfDrug: action.payload,
+        history: {
+          ...state.history,
+          substanceNotClassified: {
+            ...state.history.substanceNotClassified,
+            specificTypeOfDrug: action.payload,
+          },
         },
       };
     case 'SUBSTANCE_NOT_CLASSIFIED_ROUTE_OF_ADMINISTRATION':
       return {
         ...state,
-        substanceNotClassified: {
-          ...state.substanceNotClassified,
-          routeOfAdministration: action.payload,
+        history: {
+          ...state.history,
+          substanceNotClassified: {
+            ...state.history.substanceNotClassified,
+            routeOfAdministration: action.payload,
+          },
         },
       };
     case 'SUBSTANCE_NOT_CLASSIFIED_FREQUENCY':
       return {
         ...state,
-        substanceNotClassified: {
-          ...state.substanceNotClassified,
-          frequency: action.payload,
+        history: {
+          ...state.history,
+          substanceNotClassified: {
+            ...state.history.substanceNotClassified,
+            frequency: action.payload,
+          },
         },
       };
     case 'SUBSTANCE_NOT_CLASSIFIED_QUANTITY':
       return {
         ...state,
-        substanceNotClassified: {
-          ...state.substanceNotClassified,
-          quantity: action.payload,
+        history: {
+          ...state.history,
+          substanceNotClassified: {
+            ...state.history.substanceNotClassified,
+            quantity: action.payload,
+          },
         },
       };
     case 'LAST_USAGE_LAST_DRINK_AND_DRUG':
       return {
         ...state,
-        lastUsage: {...state.lastUsage, lastDrinkAndDrug: action.payload},
+        history: {
+          ...state.history,
+          lastUsage: {
+            ...state.history.lastUsage,
+            lastDrinkAndDrug: action.payload,
+          },
+        },
       };
     case 'LAST_USAGE_DIAGNOSIS':
       return {
         ...state,
-        lastUsage: {...state.lastUsage, diagnosis: action.payload},
+        history: {
+          ...state.history,
+          lastUsage: {...state.history.lastUsage, diagnosis: action.payload},
+        },
       };
     case 'THERMOS':
       return {
         ...state,
-        prevHistory: {...state.prevHistory, thermos: action.payload},
+        history: {
+          ...state.history,
+          prevHistory: {...state.history.prevHistory, thermos: action.payload},
+        },
       };
     case 'INSOMINIA':
       return {
         ...state,
-        prevHistory: {...state.prevHistory, insominia: action.payload},
+        history: {
+          ...state.history,
+          prevHistory: {
+            ...state.history.prevHistory,
+            insominia: action.payload,
+          },
+        },
       };
     case 'DIARRHOEA':
       return {
         ...state,
-        prevHistory: {...state.prevHistory, diarrhoea: action.payload},
+        history: {
+          ...state.history,
+          prevHistory: {
+            ...state.history.prevHistory,
+            diarrhoea: action.payload,
+          },
+        },
       };
     case 'SEVERE_PAIN':
       return {
         ...state,
-        prevHistory: {...state.prevHistory, severePain: action.payload},
+        history: {
+          ...state.history,
+          prevHistory: {
+            ...state.history.prevHistory,
+            severePain: action.payload,
+          },
+        },
       };
     case 'RESTLESSNESS':
       return {
         ...state,
-        prevHistory: {...state.prevHistory, restlessness: action.payload},
+        prevHistory: {
+          ...state.history.prevHistory,
+          restlessness: action.payload,
+        },
       };
     case 'OTHER_PSYCHIATRIC_COMPLICATION':
       return {
         ...state,
-        prevHistory: {
-          ...state.prevHistory,
-          otherPsychiatricComplication: action.payload,
+        history: {
+          ...state.history,
+          prevHistory: {
+            ...state.history.prevHistory,
+            otherPsychiatricComplication: action.payload,
+          },
         },
       };
     case 'DEPRESSION':
       return {
         ...state,
-        mentalHealthAssisment: {
-          ...state.mentalHealthAssisment,
-          depression: action.payload,
+        history: {
+          ...state.history,
+          mentalHealthAssisment: {
+            ...state.history.mentalHealthAssisment,
+            depression: action.payload,
+          },
         },
       };
     case 'SUICIDAL_IDEATION_AND_ATTEMPT':
       return {
         ...state,
-        mentalHealthAssisment: {
-          ...state.mentalHealthAssisment,
-          suicidalIdeationAndAttempt: action.payload,
+        history: {
+          ...state.history,
+          mentalHealthAssisment: {
+            ...state.history.mentalHealthAssisment,
+            suicidalIdeationAndAttempt: action.payload,
+          },
         },
       };
     case 'CONFUSION':
       return {
         ...state,
-        mentalHealthAssisment: {
-          ...state.mentalHealthAssisment,
-          confusion: action.payload,
+        history: {
+          ...state.history,
+          mentalHealthAssisment: {
+            ...state.history.mentalHealthAssisment,
+            confusion: action.payload,
+          },
         },
       };
     case 'AGGRESSIVE_OUTBURST':
       return {
         ...state,
-        mentalHealthAssisment: {
-          ...state.mentalHealthAssisment,
-          confusion: action.payload,
+        history: {
+          ...state.history,
+          mentalHealthAssisment: {
+            ...state.history.mentalHealthAssisment,
+            confusion: action.payload,
+          },
         },
       };
     case 'HALLUCINATION':
       return {
         ...state,
-        mentalHealthAssisment: {
-          ...state.mentalHealthAssisment,
-          aggresiveOutburst: action.payload,
+        history: {
+          ...state.history,
+          mentalHealthAssisment: {
+            ...state.history.mentalHealthAssisment,
+            aggresiveOutburst: action.payload,
+          },
         },
       };
     case 'PARANOIA':
       return {
         ...state,
-        mentalHealthAssisment: {
-          ...state.mentalHealthAssisment,
-          paranoia: action.payload,
+        history: {
+          ...state.history,
+          mentalHealthAssisment: {
+            ...state.history.mentalHealthAssisment,
+            paranoia: action.payload,
+          },
         },
       };
     case 'DIABETES':
       return {
         ...state,
-        chronicHealthProblem: {
-          ...state.chronicHealthProblem,
-          diabetes: action.payload,
+        history: {
+          ...state.history,
+          chronicHealthProblem: {
+            ...state.history.chronicHealthProblem,
+            diabetes: action.payload,
+          },
         },
       };
     case 'LEVER_DISORDER':
       return {
         ...state,
-        chronicHealthProblem: {
-          ...state.chronicHealthProblem,
-          leverDisorder: action.payload,
+        history: {
+          ...state.history,
+          chronicHealthProblem: {
+            ...state.history.chronicHealthProblem,
+            leverDisorder: action.payload,
+          },
         },
       };
     case 'EPILEPSY':
       return {
         ...state,
-        chronicHealthProblem: {
-          ...state.chronicHealthProblem,
-          epilepsy: action.payload,
+        history: {
+          ...state.history,
+          chronicHealthProblem: {
+            ...state.history.chronicHealthProblem,
+            epilepsy: action.payload,
+          },
         },
       };
     case 'RESPIRATORY_PROBLEMS':
       return {
         ...state,
-        chronicHealthProblem: {
-          ...state.chronicHealthProblem,
-          respiratoryProblems: action.payload,
+        history: {
+          ...state.history,
+          chronicHealthProblem: {
+            ...state.history.chronicHealthProblem,
+            respiratoryProblems: action.payload,
+          },
         },
       };
     case 'CARDIAC_PROBLEMS':
       return {
         ...state,
-        chronicHealthProblem: {
-          ...state.chronicHealthProblem,
-          cardiacProblems: action.payload,
+        history: {
+          ...state.history,
+          chronicHealthProblem: {
+            ...state.history.chronicHealthProblem,
+            cardiacProblems: action.payload,
+          },
         },
       };
     case 'USE_OF_TOBACCO_PRODUCT':
       return {
         ...state,
-        otherInfo: {...state.otherInfo, useOfTobacoProduct: action.payload},
+        history: {
+          ...state.history,
+          otherInfo: {
+            ...state.history.otherInfo,
+            useOfTobacoProduct: action.payload,
+          },
+        },
       };
     case 'USE_OF_TOBACCO_PRODUCT_DESCRIPTION':
       return {
         ...state,
-        otherInfo: {...state.otherInfo, description: action.payload},
+        history: {
+          ...state.history,
+          otherInfo: {...state.history.otherInfo, description: action.payload},
+        },
       };
     case 'ALLERGIES_TO_SPECIFIC_DRUGS_IN_OTHER_INFO':
       return {
         ...state,
-        otherInfo: {
-          ...state.otherInfo,
-          allergiesToSpecificDrugs: action.payload,
+        history: {
+          ...state.history,
+          otherInfo: {
+            ...state.history.otherInfo,
+            allergiesToSpecificDrugs: action.payload,
+          },
         },
       };
     case 'NAME':
@@ -664,12 +892,20 @@ const FormDataReducer = (state, action) => {
           address: {...state.social.address, pinCode: action.payload},
         },
       };
-    case 'IDENTITY_CARD':
+    case 'IDENTITY_CARD_NAME':
       return {
         ...state,
         social: {
           ...state.social,
-          identityCard: action.payload, //name and value both will be sent at the same time
+          identityCard: {...state.social.identityCard, name: action.payload}, //name and value both will be sent at the same time
+        },
+      };
+    case 'IDENTITY_CARD_VALUE':
+      return {
+        ...state,
+        social: {
+          ...state.social,
+          identityCard: {...state.social.identityCard, value: action.payload}, //name and value both will be sent at the same time
         },
       };
     case 'PRIOR_TREATMENT_BOOL':
@@ -689,8 +925,10 @@ const FormDataReducer = (state, action) => {
         social: {
           ...state.social,
           priorTreatment: {
-            ...state.social.priorTreatment,
-            bool: action.payload,
+            details: {
+              ...state.social.priorTreatment.details,
+              previousRehab: action.payload,
+            },
           },
         },
       };
@@ -700,8 +938,10 @@ const FormDataReducer = (state, action) => {
         social: {
           ...state.social,
           priorTreatment: {
-            ...state.social.priorTreatment,
-            durationOfRecovery: action.payload,
+            details: {
+              ...state.social.priorTreatment.details,
+              durationOfRecovery: action.payload,
+            },
           },
         },
       };
@@ -711,8 +951,10 @@ const FormDataReducer = (state, action) => {
         social: {
           ...state.social,
           priorTreatment: {
-            ...state.social.priorTreatment,
-            fatherName: action.payload,
+            details: {
+              ...state.social.priorTreatment.details,
+              fatherName: action.payload,
+            },
           },
         },
       };
@@ -770,7 +1012,7 @@ const FormDataReducer = (state, action) => {
           familyDetails: {
             ...state.social.familyDetails,
             familySupport: {
-              ...state.social.familyDetails,
+              ...state.social.familyDetails.familySupport,
               livingWithFamily: action.payload,
             },
           },
@@ -784,7 +1026,7 @@ const FormDataReducer = (state, action) => {
           familyDetails: {
             ...state.social.familyDetails,
             familySupport: {
-              ...state.social.familyDetails,
+              ...state.social.familyDetails.familySupport,
               livingWithOther: action.payload,
             },
           },
@@ -798,7 +1040,7 @@ const FormDataReducer = (state, action) => {
           familyDetails: {
             ...state.social.familyDetails,
             familySupport: {
-              ...state.social.familyDetails,
+              ...state.social.familyDetails.familySupport,
               livingAlone: action.payload,
             },
           },
@@ -812,7 +1054,7 @@ const FormDataReducer = (state, action) => {
           familyDetails: {
             ...state.social.familyDetails,
             familySupport: {
-              ...state.social.familyDetails,
+              ...state.social.familyDetails.familySupport,
               livingOnStreet: action.payload,
             },
           },
@@ -826,7 +1068,7 @@ const FormDataReducer = (state, action) => {
           familyDetails: {
             ...state.social.familyDetails,
             familySupport: {
-              ...state.social.familyDetails,
+              ...state.social.familyDetails.familySupport,
               supportPerson: action.payload,
             },
           },
@@ -840,7 +1082,7 @@ const FormDataReducer = (state, action) => {
           familyDetails: {
             ...state.social.familyDetails,
             familySupport: {
-              ...state.social.familyDetails,
+              ...state.social.familyDetails.familySupport,
               relationOfPatient: action.payload,
             },
           },
@@ -960,7 +1202,7 @@ const FormDataReducer = (state, action) => {
         legalAndFinances: {
           ...state.legalAndFinances,
           occupationalDamage: {
-            ...state.legalAndFinances.occupationHistory,
+            ...state.legalAndFinances.occupationalDamage,
             typeOfWork: action.payload,
           },
         },
@@ -971,7 +1213,7 @@ const FormDataReducer = (state, action) => {
         legalAndFinances: {
           ...state.legalAndFinances,
           occupationalDamage: {
-            ...state.legalAndFinances.occupationHistory,
+            ...state.legalAndFinances.occupationalDamage,
             unEmployedPeriod: action.payload,
           },
         },
@@ -982,7 +1224,7 @@ const FormDataReducer = (state, action) => {
         legalAndFinances: {
           ...state.legalAndFinances,
           occupationalDamage: {
-            ...state.legalAndFinances.occupationHistory,
+            ...state.legalAndFinances.occupationalDamage,
             reasonOfUnemployment: action.payload,
           },
         },
@@ -993,7 +1235,7 @@ const FormDataReducer = (state, action) => {
         legalAndFinances: {
           ...state.legalAndFinances,
           occupationalDamage: {
-            ...state.legalAndFinances.occupationHistory,
+            ...state.legalAndFinances.occupationalDamage,
             disciplinaryAction: {
               ...state.legalAndFinances.occupationalDamage.disciplinaryAction,
               bool: action.payload,
@@ -1007,7 +1249,7 @@ const FormDataReducer = (state, action) => {
         legalAndFinances: {
           ...state.legalAndFinances,
           occupationalDamage: {
-            ...state.legalAndFinances.occupationHistory,
+            ...state.legalAndFinances.occupationalDamage,
             disciplinaryAction: {
               ...state.legalAndFinances.occupationalDamage.disciplinaryAction,
               details: {
@@ -1025,7 +1267,7 @@ const FormDataReducer = (state, action) => {
         legalAndFinances: {
           ...state.legalAndFinances,
           occupationalDamage: {
-            ...state.legalAndFinances.occupationHistory,
+            ...state.legalAndFinances.occupationalDamage,
             disciplinaryAction: {
               ...state.legalAndFinances.occupationalDamage.disciplinaryAction,
               details: {
@@ -1043,7 +1285,7 @@ const FormDataReducer = (state, action) => {
         legalAndFinances: {
           ...state.legalAndFinances,
           occupationalDamage: {
-            ...state.legalAndFinances.occupationHistory,
+            ...state.legalAndFinances.occupationalDamage,
             disciplinaryAction: {
               ...state.legalAndFinances.occupationalDamage.disciplinaryAction,
               details: {
@@ -1061,7 +1303,7 @@ const FormDataReducer = (state, action) => {
         legalAndFinances: {
           ...state.legalAndFinances,
           occupationalDamage: {
-            ...state.legalAndFinances.occupationHistory,
+            ...state.legalAndFinances.occupationalDamage,
             disciplinaryAction: {
               ...state.legalAndFinances.occupationalDamage.disciplinaryAction,
               details: {
@@ -1079,7 +1321,7 @@ const FormDataReducer = (state, action) => {
         legalAndFinances: {
           ...state.legalAndFinances,
           occupationalDamage: {
-            ...state.legalAndFinances.occupationHistory,
+            ...state.legalAndFinances.occupationalDamage,
             disciplinaryAction: {
               ...state.legalAndFinances.occupationalDamage.disciplinaryAction,
               details: {
