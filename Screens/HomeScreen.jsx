@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  Pressable,
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import {Pressable, StyleSheet, Text, useColorScheme, View} from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import ContainerWrapper from '../components/ContainerWrapper';
@@ -51,19 +42,6 @@ function HomeScreen({navigation}) {
   return (
     <ContainerWrapper>
       <View style={styles.fullHeight}>
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Pressable
-            onPress={() => {
-              console.log('first');
-              navigation.navigate('Registration');
-            }}>
-            <Text>Home Page</Text>
-          </Pressable>
-        </View>
-
         <FlatList
           data={data}
           style={{height: '100%'}}
@@ -83,7 +61,7 @@ function HomeScreen({navigation}) {
 
 const RenderItem = ({item, idx}) => (
   <Pressable>
-    <Text>
+    <Text style={{color: 'black'}}>
       {item?.name} == {item?.age}
     </Text>
   </Pressable>
@@ -103,24 +81,11 @@ const styles = StyleSheet.create({
   },
   fullHeight: {
     height: '100%',
-    backgroundColor: 'red',
     position: 'relative',
   },
   sectionContainer: {
     marginTop: 32,
     paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
   },
 });
 
