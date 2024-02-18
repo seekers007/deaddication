@@ -207,7 +207,7 @@ const initialStateFormData = {
         goals: '',
         timeFrame: '',
       },
-      dealingRelapses:''
+      dealingRelapses: '',
     },
 
     followUPMeasures: {
@@ -1717,8 +1717,7 @@ const FormDataReducer = (state, action) => {
           ...state.tratmentAndGoals,
           longTermGoals: {
             ...state.tratmentAndGoals.longTermGoals,
-            dealingRelapses:action.payload
-            
+            dealingRelapses: action.payload,
           },
         },
       };

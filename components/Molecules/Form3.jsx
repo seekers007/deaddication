@@ -16,13 +16,6 @@ const FormStep3 = ({placeholder}) => {
     dispatchFormData({type: type, payload: value});
   };
 
-  useEffect(() => {
-    console.log(
-      'the form data for legal and finances==>',
-      formData.legalAndFinances,
-    );
-  }, [formData]);
-
   return (
     <View style={{display: 'flex', flexDirection: 'column', rowGap: 40}}>
       <View style={{paddingTop: 20}}>

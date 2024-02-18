@@ -118,13 +118,13 @@ const FormStep4 = ({placeholder}) => {
           <CustomInput2
             label="Dealing with defects of character"
             onChange1={value => {
-              dispatch({
+              CustomInput2Handler({
                 type: 'TREATMENT_AND_GOALS_LONG_TERM_GOALS_DEAL_WITH_DEFECT_CHARACTERS_GOALS',
                 payload: value,
               });
             }}
             onChange2={value => {
-              dispatch({
+              CustomInput2Handler({
                 type: 'TREATMENT_AND_GOALS_LONG_TERM_GOALS_DEAL_WITH_DEFECT_CHARACTERS_TIME_FRAME',
                 payload: value,
               });
@@ -133,13 +133,13 @@ const FormStep4 = ({placeholder}) => {
           <CustomInput2
             label="Improving family ties"
             onChange1={value => {
-              dispatch({
+              CustomInput2Handler({
                 type: 'TREATMENT_AND_GOALS_LONG_TERM_GOALS_FAMILY_RELATION_GOALS',
                 payload: value,
               });
             }}
             onChange2={value => {
-              dispatch({
+              CustomInput2Handler({
                 type: 'TREATMENT_AND_GOALS_LONG_TERM_GOALS_FAMILY_RELATION_TIME_FRAME',
                 payload: value,
               });
@@ -149,13 +149,13 @@ const FormStep4 = ({placeholder}) => {
           <CustomInput2
             label="Involvement in healthy recreational activities"
             onChange1={value => {
-              dispatch({
+              CustomInput2Handler({
                 type: 'TREATMENT_AND_GOALS_LONG_TERM_GOALS_RECREATIONAL_ACTIVITIES_GOALS',
                 payload: value,
               });
             }}
             onChange2={value => {
-              dispatch({
+              CustomInput2Handler({
                 type: 'TREATMENT_AND_GOALS_LONG_TERM_GOALS_RECREATIONAL_ACTIVITIES_TIME_FRAME',
                 payload: value,
               });
@@ -176,7 +176,7 @@ const FormStep4 = ({placeholder}) => {
             name="TREATMENT_AND_GOALS_FOLLOW_UP_MEASURES_EXTENTION_DETAILS_COUNCELLORS_NAME"
             onChange={textBoxHandler}
             state={
-              formData.tratmentAndGoals.followUpMeasures.extentionDetails
+              formData.tratmentAndGoals.followUPMeasures.extentionDetails
                 .councellorsName
             }
           />
@@ -185,7 +185,7 @@ const FormStep4 = ({placeholder}) => {
             name="TREATMENT_AND_GOALS_FOLLOW_UP_MEASURES_EXTENTION_DETAILS_DATE_OF_ADMISSIONS"
             onChange={textBoxHandler}
             state={
-              formData.tratmentAndGoals.followUpMeasures.extentionDetails
+              formData.tratmentAndGoals.followUPMeasures.extentionDetails
                 .DateOfAdmissions
             }
           />
@@ -194,7 +194,7 @@ const FormStep4 = ({placeholder}) => {
             name="TREATMENT_AND_GOALS_FOLLOW_UP_MEASURES_EXTENTION_DETAILS_DISCHARGE"
             onChange={textBoxHandler}
             state={
-              formData.tratmentAndGoals.followUpMeasures.extentionDetails
+              formData.tratmentAndGoals.followUPMeasures.extentionDetails
                 .discharge
             }
           />
@@ -207,7 +207,7 @@ const FormStep4 = ({placeholder}) => {
             name="TREATMENT_AND_GOALS_FOLLOW_UP_MEASURES_FOLLOW_UP_DETAILS_ISSUE_DEALT_IN_COUNSELING"
             onChange={textBoxHandler}
             state={
-              formData.tratmentAndGoals.followUpMeasures.followUpDetails
+              formData.tratmentAndGoals.followUPMeasures.followUpDetails
                 .issueDealtInCounseling
             }
           />
@@ -216,11 +216,11 @@ const FormStep4 = ({placeholder}) => {
             name="TREATMENT_AND_GOALS_FOLLOW_UP_MEASURES_FOLLOW_UP_DETAILS_RECOVERY_STATUS"
             onChange={textBoxHandler}
             state={
-              formData.tratmentAndGoals.followUpMeasures.followUpDetails
+              formData.tratmentAndGoals.followUPMeasures.followUpDetails
                 .recoverySatus
             }
           />
-          <Dropdown options={options} />
+          {/* <Dropdown options={options} /> */}
         </View>
       </View>
     </View>
