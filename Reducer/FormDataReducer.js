@@ -144,7 +144,7 @@ const initialStateFormData = {
       everResigned: '',
       isHealthEnsured: '',
       satisfiedWithJob: '',
-      startWorkingAge:''
+      startWorkingAge: '',
     },
 
     occupationalDamage: {
@@ -156,7 +156,7 @@ const initialStateFormData = {
         details: {
           absteneeism: '',
           warningOrMemos: '',
-          suspentionOrder: '',
+          suspensionOrder: '',
           dismissalOrder: '',
           transferOrder: '',
         },
@@ -169,7 +169,7 @@ const initialStateFormData = {
       drunkInfluenced: '',
       drunkAndDrive: '',
       accidentDrunkAndDrive: '',
-      assult: '',
+      assault: '',
       otherReason: '',
     },
   },
@@ -1214,6 +1214,18 @@ const FormDataReducer = (state, action) => {
           satisfiedWithJob: action.payload,
         },
       };
+
+    case 'LEGAL_AND_FINANCES_OCCUPATION_HISTORY_START_WORKING_AGE':
+      return {
+        ...state,
+        legalAndFinances: {
+          ...state.legalAndFinances,
+          occupationHistory: {
+            ...state.legalAndFinances.occupationHistory,
+            startWorkingAge: action.payload,
+          },
+        },
+      };
     case 'LEGAL_AND_FINANCES_OCCUPATION_HISTORY':
       return {
         ...state,
@@ -1269,7 +1281,7 @@ const FormDataReducer = (state, action) => {
           },
         },
       };
-    case 'LEGAL_AND_FINANCES_OCCUPATION_HISTORY_ SATISFIED_WITH_JOB':
+    case 'LEGAL_AND_FINANCES_OCCUPATION_HISTORY_SATISFIED_WITH_JOB':
       return {
         ...state,
         legalAndFinances: {
@@ -1303,6 +1315,7 @@ const FormDataReducer = (state, action) => {
         },
       };
     case 'LEGAL_AND_FINANCES_OCCUPATIONAL_DAMAGE_REASON_OF_UNEMPLOYMENT':
+      console.log('the log got push ==>', action.payload);
       return {
         ...state,
         legalAndFinances: {
@@ -1328,6 +1341,7 @@ const FormDataReducer = (state, action) => {
         },
       };
     case 'LEGAL_AND_FINANCES_OCCUPATIONAL_DAMAGE_ABSTENEEISM':
+      console.log('the btn to switch off /on ==>', action.payload);
       return {
         ...state,
         legalAndFinances: {
@@ -1375,7 +1389,7 @@ const FormDataReducer = (state, action) => {
               details: {
                 ...state.legalAndFinances.occupationalDamage.disciplinaryAction
                   .action,
-                suspentionOrder: action.payload,
+                suspensionOrder: action.payload,
               },
             },
           },
@@ -1418,6 +1432,7 @@ const FormDataReducer = (state, action) => {
         },
       };
     case 'LEGAL_AND_FINANCES_LEGAL_HISTORY_FOR_ARREST_SALES_OF_DRUG':
+      console.log('the update of the switch ==>', action.payload);
       return {
         ...state,
         legalAndFinances: {
@@ -1479,7 +1494,7 @@ const FormDataReducer = (state, action) => {
           ...state.legalAndFinances,
           legalHistoryForArrest: {
             ...state.legalAndFinances.legalHistoryForArrest,
-            assult: action.payload,
+            assault: action.payload,
           },
         },
       };
