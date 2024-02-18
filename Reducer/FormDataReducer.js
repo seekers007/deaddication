@@ -90,7 +90,7 @@ const initialStateFormData = {
     religion: '',
     livingArrangements: '',
     phoneNo: '',
-    gaurdianPhoneNo: '',
+    guardianPhoneNo: '',
 
     address: {
       homeAddress: '',
@@ -105,16 +105,21 @@ const initialStateFormData = {
       bool: '', //if true the details else not
       details: {
         previousRehab: '',
+        yearOfAdmit: '',
         durationOfRecovery: '',
-        fatherName: '',
+        // fatherName: '',
       },
     },
 
     familyDetails: {
       fatherName: '',
-      occupation: '',
-      age: '',
-      income: '',
+      motherName: '',
+      fatherOccupation: '',
+      fatherAge: '',
+      fatherIncome: '',
+      motherOccupation: '',
+      motherIncome: '',
+      motherAge: '',
       familySupport: {
         livingWithFamily: '',
         livingWithOther: '',
@@ -850,7 +855,7 @@ const FormDataReducer = (state, action) => {
     case 'GUARDIAN_PHONE_NO':
       return {
         ...state,
-        social: {...state.social, gaurdianPhoneNo: action.payload},
+        social: {...state.social, guardianPhoneNo: action.payload},
       };
     case 'ADDRESS_HOME_ADDRESS':
       return {
@@ -900,14 +905,14 @@ const FormDataReducer = (state, action) => {
           identityCard: {...state.social.identityCard, name: action.payload}, //name and value both will be sent at the same time
         },
       };
-    case 'IDENTITY_CARD_VALUE':
-      return {
-        ...state,
-        social: {
-          ...state.social,
-          identityCard: {...state.social.identityCard, value: action.payload}, //name and value both will be sent at the same time
-        },
-      };
+    // case 'IDENTITY_CARD_VALUE':
+    //   return {
+    //     ...state,
+    //     social: {
+    //       ...state.social,
+    //       identityCard: {...state.social.identityCard, value: action.payload}, //name and value both will be sent at the same time
+    //     },
+    //   };
     case 'PRIOR_TREATMENT_BOOL':
       return {
         ...state,
@@ -925,9 +930,25 @@ const FormDataReducer = (state, action) => {
         social: {
           ...state.social,
           priorTreatment: {
+            ...state.social.priorTreatment,
             details: {
               ...state.social.priorTreatment.details,
               previousRehab: action.payload,
+            },
+          },
+        },
+      };
+
+    case 'PRIOR_TREATMENT_DETAILS_YEAR_OF_REHAB_ADMIT':
+      return {
+        ...state,
+        social: {
+          ...state.social,
+          priorTreatment: {
+            ...state.social.priorTreatment,
+            details: {
+              ...state.social.priorTreatment.details,
+              yearOfAdmit: action.payload,
             },
           },
         },
@@ -938,6 +959,7 @@ const FormDataReducer = (state, action) => {
         social: {
           ...state.social,
           priorTreatment: {
+            ...state.social.priorTreatment,
             details: {
               ...state.social.priorTreatment.details,
               durationOfRecovery: action.payload,
@@ -945,19 +967,20 @@ const FormDataReducer = (state, action) => {
           },
         },
       };
-    case 'PRIOR_TREATMENT_DETAILS_FATHER_NAME':
-      return {
-        ...state,
-        social: {
-          ...state.social,
-          priorTreatment: {
-            details: {
-              ...state.social.priorTreatment.details,
-              fatherName: action.payload,
-            },
-          },
-        },
-      };
+    // case 'PRIOR_TREATMENT_DETAILS_FATHER_NAME':
+    //   return {
+    //     ...state,
+    //     social: {
+    //       ...state.social,
+    //       priorTreatment: {
+    //         ...state.social.priorTreatment,
+    //         details: {
+    //           ...state.social.priorTreatment.details,
+    //           fatherName: action.payload,
+    //         },
+    //       },
+    //     },
+    //   };
 
     // form2
     case 'FAMILY_DETAILS_FATHER_NAME':
@@ -971,25 +994,73 @@ const FormDataReducer = (state, action) => {
           },
         },
       };
-    case 'FAMILY_DETAILS_OCCUPATION':
+
+    case 'FAMILY_DETAILS_MOTHER_NAME':
       return {
         ...state,
         social: {
           ...state.social,
           familyDetails: {
             ...state.social.familyDetails,
-            occupation: action.payload,
+            motherName: action.payload,
           },
         },
       };
-    case 'FAMILY_DETAILS_AGE':
+    case 'FAMILY_DETAILS_FATHER_OCCUPATION':
       return {
         ...state,
         social: {
           ...state.social,
           familyDetails: {
             ...state.social.familyDetails,
-            age: action.payload,
+            fatherOccupation: action.payload,
+          },
+        },
+      };
+
+    case 'FAMILY_DETAILS_MOTHER_OCCUPATION':
+      return {
+        ...state,
+        social: {
+          ...state.social,
+          familyDetails: {
+            ...state.social.familyDetails,
+            motherOccupation: action.payload,
+          },
+        },
+      };
+
+    // case 'FAMILY_DETAILS_MOTHER_OCCUPATION':
+    //   return {
+    //     ...state,
+    //     social: {
+    //       ...state.social,
+    //       familyDetails: {
+    //         ...state.social.familyDetails,
+    //         moduletherOccupation: action.payload,
+    //       },
+    //     },
+    //   };
+    case 'FAMILY_DETAILS_FATHER_AGE':
+      return {
+        ...state,
+        social: {
+          ...state.social,
+          familyDetails: {
+            ...state.social.familyDetails,
+            fatherAge: action.payload,
+          },
+        },
+      };
+
+    case 'FAMILY_DETAILS_MOTHER_AGE':
+      return {
+        ...state,
+        social: {
+          ...state.social,
+          familyDetails: {
+            ...state.social.familyDetails,
+            motherAge: action.payload,
           },
         },
       };
@@ -1000,7 +1071,19 @@ const FormDataReducer = (state, action) => {
           ...state.social,
           familyDetails: {
             ...state.social.familyDetails,
-            income: action.payload,
+            fatherIncome: action.payload,
+          },
+        },
+      };
+
+    case 'FAMILY_DETAILS_MOTHER_INCOME':
+      return {
+        ...state,
+        social: {
+          ...state.social,
+          familyDetails: {
+            ...state.social.familyDetails,
+            motherIncome: action.payload,
           },
         },
       };

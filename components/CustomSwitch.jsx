@@ -8,7 +8,7 @@ const CustomSwitch = ({label, state, onChange, name}) => {
       <Text style={styles.label}>{label}</Text>
 
       <Switch
-        value={state}
+        value={state ? true : false}
         onValueChange={() => onChange(name, !state)}
         disabled={false}
         activeText={'On'}
