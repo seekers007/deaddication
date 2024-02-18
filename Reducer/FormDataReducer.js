@@ -144,6 +144,7 @@ const initialStateFormData = {
       everResigned: '',
       isHealthEnsured: '',
       satisfiedWithJob: '',
+      startWorkingAge:''
     },
 
     occupationalDamage: {
@@ -1213,7 +1214,7 @@ const FormDataReducer = (state, action) => {
           satisfiedWithJob: action.payload,
         },
       };
-    case 'LEGAL_AND_FINANCES_OCCUPATION_HISTORY_OCCUPATION_HISTORY':
+    case 'LEGAL_AND_FINANCES_OCCUPATION_HISTORY':
       return {
         ...state,
         legalAndFinances: {

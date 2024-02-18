@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { TextInput, View } from 'react-native';
 import { Text, Stack } from '@react-native-material/core';
-import CustomInput,{CustomInputStandard,CustomInput2,CustomInput4} from '../CustomInput';
+import {CustomInputStandard,CustomInput2,CustomInput4,CustomInput} from '../CustomInput';
 // import Datepicker from '../Datepicker';
 import Dropdown from '../Dropdown'
 
 const FormStep4 = ({ placeholder }) => {
   const options = [
-    { value: 1, label: 'Option 1' },
+    { value: 1, label: 'Option 1' }, 
     { value: 2, label: 'Option 2' },
     { value: 3, label: 'Option 3' },
     { value: 4, label: 'Option 4' },
