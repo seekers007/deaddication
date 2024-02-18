@@ -39,7 +39,7 @@ const FormStep2 = ({placeholder}) => {
           state={formData?.social?.registrationNo}
         />
         {/* date of registration == dateOfRegistration*/}
-        <Datepicker name={'DATE_OF_REGISTRATION'} />
+        {/* <Datepicker name={'DATE_OF_REGISTRATION'} /> */}
         <CustomInput
           label="SEX"
           name={'SEX'}
