@@ -61,7 +61,7 @@ export const CustomInput3 = ({label, state, onChange, name}) => (
     />
   </View>
 );
-export const CustomInput2 = ({label, state, onChange1,onChange2, name1,name2}) => (
+export const CustomInput2 = ({label, state, onChange1,onChange2}) => (
   <View style={{ display: 'flex',flexDirection:'row',justifyContent:'center',alignItems:'center',columnGap:20}}>
     <View style={{width:"40%"}}>
       <Text style={{color:'black'}}>{label}</Text>
@@ -72,9 +72,9 @@ export const CustomInput2 = ({label, state, onChange1,onChange2, name1,name2}) =
       color="black"
       style={{ borderRadius: 100, width: '40%' }}
       inputContainerStyle={{ height:40}}
-      name={name1}
+      // name={name1}
       value={state}
-      onChangeText={value => onChange(name, value)}
+      onChangeText={value => onChange1(name1, value)}
     />
     <TextInput
      variant="outlined"
@@ -82,9 +82,9 @@ export const CustomInput2 = ({label, state, onChange1,onChange2, name1,name2}) =
       color="black"
       style={{ borderRadius: 100, width: '20%' }}
       inputContainerStyle={{ height:40}}
-      name={name2}
+      // name={name2}
       value={state}
-      onChangeText={value => onChange(name, value)}
+      onChangeText={value => onChange2(name2, value)}
     />
   </View>
 );
