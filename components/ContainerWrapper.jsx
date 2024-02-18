@@ -15,14 +15,15 @@ function ContainerWrapper({navigation, children}) {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    // backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    height: '100%',
   };
 
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
+        // backgroundColor={backgroundStyle.backgroundColor}
         animated={true}
       />
       {children}

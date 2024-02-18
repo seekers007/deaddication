@@ -1,18 +1,15 @@
 import React, {useState} from 'react';
 import {TouchableOpacity, View, Text, StyleSheet} from 'react-native';
 
-const CustomCheckbox = ({initialState = false, label}) => {
-  const [checked, setChecked] = useState(initialState);
-
-  const toggleCheckbox = () => {
-    setChecked(!checked);
-  };
-
+const CustomCheckbox = ({state, label, onChange, name}) => {
   return (
-    <TouchableOpacity style={styles.container} onPress={toggleCheckbox}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => onChange(name, !state)}
+      name={name}>
       <Text style={styles.label}>{label}</Text>
-      <View style={[styles.checkbox, checked && styles.checked]}>
-        {checked && <Text style={styles.checkmark}>&#x2713;</Text>}
+      <View style={[styles.checkbox, state && styles.checked]}>
+        {state && <Text style={styles.checkmark}>&#x2713;</Text>}
       </View>
     </TouchableOpacity>
   );
@@ -45,6 +42,7 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 16,
+    color: '#000',
   },
 });
 

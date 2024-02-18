@@ -1,30 +1,15 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 import {Switch} from 'react-native-switch';
 
-const CustomSwitch = ({label}) => {
-  const [isEnabled, setIsEnabled] = useState(false);
-
-  const toggleSwitch = () => {
-    setIsEnabled(previousState => !previousState);
-  };
-
+const CustomSwitch = ({label, state, onChange, name}) => {
   return (
     <View style={styles.container}>
       <Text style={styles.label}>{label}</Text>
-      {/* <Switch
-        onValueChange={toggleSwitch}
-        value={isEnabled}
-        backgroundActive={'black'}
-        switchLeftPx={2}
-        switchRightPx={2}
-        activeText={'Yes'}
-        inActiveText={'No'}
-      /> */}
 
       <Switch
-        value={isEnabled}
-        onValueChange={toggleSwitch}
+        value={state ? true : false}
+        onValueChange={() => onChange(name, !state)}
         disabled={false}
         activeText={'On'}
         inActiveText={'Off'}
@@ -33,19 +18,18 @@ const CustomSwitch = ({label}) => {
         activeTextStyle={{paddingHorizontal: 5}}
         inactiveTextStyle={{paddingHorizontal: 5}}
         backgroundActive={'black'}
-        backgroundInactive={'green'}
+        backgroundInactive={'grey'}
         circleActiveColor={'#fff'}
         circleInActiveColor={'#fff'}
         changeValueImmediately={true}
         outerCircleStyle={{
-          backgroundColor: 'black',
           borderRadius: 300,
           justifyContent: 'space-between',
         }}
         renderActiveText={true}
         renderInActiveText={true}
-        switchLeftPx={0}
-        switchRightPx={0}
+        switchLeftPx={10}
+        switchRightPx={10}
         switchWidthMultiplier={2}
         switchBorderRadius={30}
       />
@@ -64,5 +48,7 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 16,
+    color: 'black',
+    width: '70%',
   },
 });

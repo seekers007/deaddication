@@ -1,4 +1,4 @@
-import React, {createContext} from 'react';
+import React, {createContext, useReducer} from 'react';
 import {
   initialStateFormData,
   FormDataReducer,
@@ -7,12 +7,15 @@ import {
 const FormDataDetailContext = createContext();
 
 const FormDataDetailContextProvider = ({children}) => {
+  const [formData, dispatchFormData] = useReducer(
+    FormDataReducer,
+    initialStateFormData,
+  );
   return (
-    <FormDataDetailContext.Provider
-      value={(initialStateFormData, FormDataReducer)}>
+    <FormDataDetailContext.Provider value={{formData, dispatchFormData}}>
       {children}
     </FormDataDetailContext.Provider>
   );
 };
 
-export default {FormDataDetailContext, FormDataDetailContextProvider};
+export {FormDataDetailContext, FormDataDetailContextProvider};
