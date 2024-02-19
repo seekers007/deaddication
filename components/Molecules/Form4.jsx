@@ -11,10 +11,6 @@ import {validatePathConfig} from '@react-navigation/native';
 const FormStep4 = ({placeholder}) => {
   const {formData, dispatchFormData} = useContext(FormDataDetailContext);
 
-  const checkBoxHandler = (name, value) => {
-    dispatchFormData({type: name, payload: value});
-  };
-
   const textBoxHandler = (type, value) => {
     dispatchFormData({type: type, payload: value});
   };
@@ -38,13 +34,12 @@ const FormStep4 = ({placeholder}) => {
         flexDirection: 'column',
         rowGap: 40,
         overflow: 'scroll',
-        paddingHorizontal: 20,
+        marginHorizontal: 20,
       }}>
       <View>
         <Text variant="h6">MENTAL HEALTH ASSESSMENT</Text>
         <View
           style={{
-            marginHorizontal: 30,
             paddingTop: 20,
             display: 'flex',
             flexDirection: 'column',
@@ -118,56 +113,58 @@ const FormStep4 = ({placeholder}) => {
           <CustomInput2
             label="Dealing with defects of character"
             onChange1={value => {
-              CustomInput2Handler({
-                type: 'TREATMENT_AND_GOALS_LONG_TERM_GOALS_DEAL_WITH_DEFECT_CHARACTERS_GOALS',
-                payload: value,
-              });
+              CustomInput2Handler(
+                'TREATMENT_AND_GOALS_LONG_TERM_GOALS_DEAL_WITH_DEFECT_CHARACTERS_GOALS',
+                value,
+              );
             }}
             onChange2={value => {
-              CustomInput2Handler({
-                type: 'TREATMENT_AND_GOALS_LONG_TERM_GOALS_DEAL_WITH_DEFECT_CHARACTERS_TIME_FRAME',
-                payload: value,
-              });
+              CustomInput2Handler(
+                'TREATMENT_AND_GOALS_LONG_TERM_GOALS_DEAL_WITH_DEFECT_CHARACTERS_TIME_FRAME',
+                value,
+              );
             }}
           />
           <CustomInput2
             label="Improving family ties"
             onChange1={value => {
-              CustomInput2Handler({
-                type: 'TREATMENT_AND_GOALS_LONG_TERM_GOALS_FAMILY_RELATION_GOALS',
-                payload: value,
-              });
+              CustomInput2Handler(
+                'TREATMENT_AND_GOALS_LONG_TERM_GOALS_FAMILY_RELATION_GOALS',
+                value,
+              );
             }}
             onChange2={value => {
-              CustomInput2Handler({
-                type: 'TREATMENT_AND_GOALS_LONG_TERM_GOALS_FAMILY_RELATION_TIME_FRAME',
-                payload: value,
-              });
+              CustomInput2Handler(
+                'TREATMENT_AND_GOALS_LONG_TERM_GOALS_FAMILY_RELATION_TIME_FRAME',
+                value,
+              );
             }}
           />
 
           <CustomInput2
             label="Involvement in healthy recreational activities"
             onChange1={value => {
-              CustomInput2Handler({
-                type: 'TREATMENT_AND_GOALS_LONG_TERM_GOALS_RECREATIONAL_ACTIVITIES_GOALS',
-                payload: value,
-              });
+              CustomInput2Handler(
+                'TREATMENT_AND_GOALS_LONG_TERM_GOALS_RECREATIONAL_ACTIVITIES_GOALS',
+                value,
+              );
             }}
             onChange2={value => {
-              CustomInput2Handler({
-                type: 'TREATMENT_AND_GOALS_LONG_TERM_GOALS_RECREATIONAL_ACTIVITIES_TIME_FRAME',
-                payload: value,
-              });
+              CustomInput2Handler(
+                'TREATMENT_AND_GOALS_LONG_TERM_GOALS_RECREATIONAL_ACTIVITIES_TIME_FRAME',
+                value,
+              );
             }}
           />
 
+          {/* <View style={{backgroundColor: 'red', width: '100%'}}> */}
           <CustomInput
             label="Dealing with relapses if any"
-            name=""
+            name="TREATMENT_AND_GOALS_FOLLOW_UP_MEASURES_DEALING_WITH_RELAPSES"
             onChange={textBoxHandler}
             state={formData.tratmentAndGoals.longTermGoals.dealingRelapses}
           />
+          {/* </View> */}
           <Text style={{fontSize: 14, fontWeight: 'bold', textAlign: 'center'}}>
             Follow-up measures
           </Text>

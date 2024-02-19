@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {
   StyleSheet,
   Text,
@@ -42,19 +42,36 @@ function Registration({navigation}) {
     checkRegistration();
   }, [isRegistered, navigation]);
 
+  const [userData, setUserData] = useState({
+    name: '',
+    regNo: '',
+    centerDetail: '',
+  });
+
   const registerTheUser = async () => {
     try {
-      await storeTheItem('@De_Addict_Is_Registered', 'true');
+      console.log('the data ==>', userData);
+      if (userData.name && userData.regNo && userData.centerDetail) {
+        await storeTheItem('@De_Addict_Is_Registered', 'true');
+        navigation.replace('Home');
+      } else {
+        Alert.alert('Please enter the required field');
+      }
 
       // some function of store data--> starts
 
       //end
-      navigation.replace('Home');
     } catch (err) {
       Alert.alert(`Failed to register `);
     }
   };
 
+  const changeHandler = (name, val) => {
+    console.log('the name and val===>', name, val);
+    setUserData(prev => {
+      return {...prev, [name]: val};
+    });
+  };
   return (
     <ContainerWrapper>
       <View style={{height: '100%'}}>
@@ -72,9 +89,21 @@ function Registration({navigation}) {
               source={require('../assets/images/snack-icon.png')}
             />
           </View>
-          <CustomTextInput placeholder={'Enter your full name'} />
-          <CustomTextInput placeholder={'Enter your registration number'} />
-          <CustomTextInput placeholder={'Center Details'} />
+          <CustomTextInput
+            placeholder={'Enter your full name'}
+            onChange={changeHandler}
+            name={'name'}
+          />
+          <CustomTextInput
+            placeholder={'Enter your registration number'}
+            onChange={changeHandler}
+            name={'regNo'}
+          />
+          <CustomTextInput
+            placeholder={'Center Details'}
+            onChange={changeHandler}
+            name={'centerDetail'}
+          />
           <CustomButton title="REGISTER" onPress={registerTheUser} />
         </View>
       </View>

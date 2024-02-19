@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {TextInput, View} from 'react-native';
 
-const CustomTextInput = ({placeholder}) => {
+const CustomTextInput = ({placeholder, name, onChange}) => {
   const [text, setText] = useState('');
 
   return (
@@ -14,10 +14,11 @@ const CustomTextInput = ({placeholder}) => {
           paddingHorizontal: 10,
           paddingVertical: 8,
           backgroundColor: 'rgba(0,0,0,0.05)',
+          color: 'black',
         }}
         placeholder={placeholder}
-        onChangeText={setText}
-        value={text}
+        placeholderTextColor={'#000'}
+        onChangeText={val => onChange(name, val)}
       />
     </View>
   );

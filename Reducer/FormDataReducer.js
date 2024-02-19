@@ -1722,6 +1722,7 @@ const FormDataReducer = (state, action) => {
         },
       };
     case 'TREATMENT_AND_GOALS_FOLLOW_UP_MEASURES_EXTENTION_DETAILS_COUNCELLORS_NAME':
+      console.log('the data is ==>', action.payload);
       return {
         ...state,
         tratmentAndGoals: {

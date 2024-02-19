@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   Animated,
   Pressable,
@@ -7,11 +7,13 @@ import {
   TouchableOpacity,
   useColorScheme,
   View,
+  RefreshControl,
 } from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import ContainerWrapper from '../components/ContainerWrapper';
 import {FlatList} from 'react-native-gesture-handler';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 function HomeScreen({navigation}) {
   const isDarkMode = useColorScheme() === 'dark';
@@ -21,57 +23,35 @@ function HomeScreen({navigation}) {
     height: '100%',
   };
 
-  const data = [
-    {
-      name: 'ABC', //social.name
-      fatherName: 'DEF', //social.familyDetails.fatherName
-      motherName: 'GHI', //social.familyDetails.motherName
-      DOB: 'J/K/L', //social.DOB
-      address: 'M/N/O', //social.address.homeAddress
-      contactNo: '1234567890', //social.phoneNo
-      gender: 'M/A', //social.sec
-    },
+  const [data, setData] = useState([]);
+  const [refreshing, setRefreshing] = useState(false);
+  const getExistingData = async () => {
+    try {
+      const storedData = await AsyncStorage.getItem('@De_addict_data');
+      return storedData ? JSON.parse(storedData) : [];
+    } catch (e) {
+      console.error('Failed to retrieve data:', e);
+      return [];
+    }
+  };
 
-    {
-      name: 'ABC', //social.name
-      fatherName: 'DEF', //social.familyDetails.fatherName
-      motherName: 'GHI', //social.familyDetails.motherName
-      DOB: 'J/K/L', //social.DOB
-      address: 'M/N/O', //social.address.homeAddress
-      contactNo: '1234567890', //social.phoneNo
-      gender: 'M/A', //social.sec
-    },
-    {
-      name: 'ABC', //social.name
-      fatherName: 'DEF', //social.familyDetails.fatherName
-      motherName: 'GHI', //social.familyDetails.motherName
-      DOB: 'J/K/L', //social.DOB
-      address: 'M/N/O', //social.address.homeAddress
-      contactNo: '1234567890', //social.phoneNo
-      gender: 'M/A', //social.sec
-    },
-    {
-      name: 'ABC', //social.name
-      fatherName: 'DEF', //social.familyDetails.fatherName
-      motherName: 'GHI', //social.familyDetails.motherName
-      DOB: 'J/K/L', //social.DOB
-      address: 'M/N/O', //social.address.homeAddress
-      contactNo: '1234567890', //social.phoneNo
-      gender: 'M/A', //social.sec
-    },
-    {
-      name: 'ABC', //social.name
-      fatherName: 'DEF', //social.familyDetails.fatherName
-      motherName: 'GHI', //social.familyDetails.motherName
-      DOB: 'J/K/L', //social.DOB
-      address: 'M/N/O', //social.address.homeAddress
-      contactNo: '1234567890', //social.phoneNo
-      gender: 'M/A', //social.sec
-    },
-  ];
+  useEffect(() => {
+    console.log('the list is fetched');
+    const callback = async () => {
+      const list = await getExistingData();
+      setData(list);
+    };
+
+    callback();
+  }, []);
 
   const handleNav = () => {
     navigation.navigate('FormPage');
+  };
+
+  const handleRefresh = async () => {
+    const list = await getExistingData();
+    setData(list);
   };
   return (
     <ContainerWrapper>
@@ -89,6 +69,19 @@ function HomeScreen({navigation}) {
           }}
           keyExtractor={(item, idx) => idx}
           nestedScrollEnabled
+          ListEmptyComponent={
+            <View
+              style={{
+                height: '100%',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
+              <Text style={{color: 'black'}}>No Records Found</Text>
+            </View>
+          }
+          refreshControl={
+            <RefreshControl refreshing={refreshing} onRefresh={handleRefresh} />
+          }
         />
         <Pressable style={styles.floatingBtn} onPress={handleNav}>
           <Text style={{color: 'white'}}>Add</Text>
@@ -104,12 +97,14 @@ const RenderItem = ({item, idx}) => {
     <Pressable style={styles.masterWrapperOfSubComp}>
       <View style={styles.flexRowContainer}>
         <View>
-          <Text style={styles.boldName}>{item?.name}</Text>
+          <Text style={styles.boldName}>
+            {item?.social?.name || ' Not Provided '}
+          </Text>
 
           <Text style={{color: '#000', lineHeight: 25}}>S/o</Text>
 
           <Text style={{color: '#000'}}>
-            dhshdadhkadahjk{' '}
+            {item?.social.familyDetails.fatherName || ' Not Provided '}
             <Text style={{fontStyle: 'italic', fontSize: 10}}>
               (father name)
             </Text>
@@ -133,21 +128,22 @@ const RenderItem = ({item, idx}) => {
         <Animated.View>
           <View>
             <Text style={{color: 'black', paddingVertical: 5}}>
-              Motther name{' '}
+              {item?.social.familyDetails.motherName || ' Not Provided '}
               <Text style={{fontStyle: 'italic', fontSize: 10}}>
                 (Mother name)
               </Text>{' '}
             </Text>
             <View style={styles.padJustifyFlexRow}>
-              <Text style={{color: 'black'}}>Mobile: 78887774367</Text>
-              <Text style={{color: 'black'}}>DOB: 12/12/2002</Text>
-              <Text style={{color: 'black'}}> MALE</Text>
+              <Text style={{color: 'black'}}>
+                Mobile: {item?.social?.phoneNo || ' Not Provided '}
+              </Text>
+              <Text style={{color: 'black'}}>
+                DOB: {item.social.DOB || ' Not Provided '}
+              </Text>
+              <Text style={{color: 'black'}}> {item?.social?.sex}</Text>
             </View>
             <Text style={{color: 'black'}}>
-              Address :
-              {
-                'dhjksdhsdjkafjkfhd dsajdhjk dsadsahdjk dsahdjahdjkdj dhjksahdasdj d ajkdhadhk  hdkj h ksdjsdjkdjlad djsddjal fhdjkfjkdfj fjdsfjkhfs fkjdjsfjkhdfjh'
-              }
+              Address : {item?.social.address.homeAddress || ' Not Provided '}
             </Text>
           </View>
 

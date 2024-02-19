@@ -8,7 +8,7 @@ export default function CustomInput({label, state, onChange, name}) {
       variant="outlined"
       label={label}
       color="black"
-      style={{borderRadius: 100, width: '100%', backgroundColor: '#ecf0f1'}}
+      style={{borderRadius: 100, width: '100%'}}
       inputContainerStyle={{backgroundColor: '#ecf0f1'}}
       name={name}
       value={state}
