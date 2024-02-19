@@ -23,6 +23,76 @@ const FormStep1 = ({placeholder}) => {
         rowGap: 40,
         padding: 20,
       }}>
+       <View style={{ marginHorizontal: 30 }}>
+        <Accordion
+          title="Cannabis"
+          child={
+            <View>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.cannabis.ageOfFirstUse}/>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.cannabis.yearOfUse}/>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.cannabis.yearsOfExessiveUse}/>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.cannabis.specificTypeOfDrug}/>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.cannabis.routeOfAdministration}/>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.cannabis.frequency}/>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.cannabis.quantity}/>
+            </View>
+          }
+        />
+        <Accordion
+          title="Stimulants"
+          child={
+            <View>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.stimulants}/>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.stimulants}/>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.stimulants}/>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.stimulants}/>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.stimulants}/>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.cannabis.frequency}/>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.cannabis.quantity}/>
+            </View>
+          }
+        />
+        <Accordion
+          title="Hallucinogens"
+          child={
+            <View>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.hillucinogens}/>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.hillucinogens}/>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.hillucinogens}/>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.hillucinogens}/>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.hillucinogens}/>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.cannabis.frequency}/>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.cannabis.quantity}/>
+            </View>
+          }
+        /><Accordion
+          title="Inhalants"
+          child={
+            <View>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.inhalants}/>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.inhalants}/>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.inhalants}/>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.inhalants}/>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.inhalants}/>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.cannabis.frequency}/>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.cannabis.quantity}/>
+            </View>
+          }
+        /><Accordion
+          title="Substance not classified"
+          child={
+            <View>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.substanceNotClassified}/>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.substanceNotClassified}/>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.substanceNotClassified}/>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.substanceNotClassified}/>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.substanceNotClassified}/>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.cannabis.frequency}/>
+              <CustomInput label="hi" name={} onChange={textBoxHandler} state={formData.history.cannabis.quantity}/>
+            </View>
+          }
+        />
+      </View>
       <View>
         <Text variant="h6">MENTAL HEALTH ASSESSMENT</Text>
         <View
