@@ -52,20 +52,23 @@ const PregressStepsComp = () => {
 
   return (
     <ProgressSteps {...progressStepsStyle}>
-      <ProgressStep label="info" nextBtnTextStyle={buttonTextStyle}>
+      <ProgressStep label="Social" nextBtnTextStyle={buttonTextStyle}>
+        <View style={{}}>
+          <FormStep2 />
+        </View>
+      </ProgressStep>
+      <ProgressStep
+        label="info"
+        nextBtnTextStyle={buttonTextStyle}
+        previousBtnStyle={buttonTextStyle}>
         <View style={{}}>
           <FormStep1 />
         </View>
       </ProgressStep>
       <ProgressStep
-        label="Social"
+        label="Legal & Finances"
         nextBtnTextStyle={buttonTextStyle}
         previousBtnStyle={buttonTextStyle}>
-        <View style={{}}>
-          <FormStep2 />
-        </View>
-      </ProgressStep>
-      <ProgressStep label="Legal & Finances" nextBtnTextStyle={buttonTextStyle}>
         <View style={{}}>
           <FormStep3 />
         </View>

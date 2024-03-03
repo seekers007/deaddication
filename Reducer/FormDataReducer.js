@@ -1,5 +1,14 @@
 const initialStateFormData = {
   history: {
+    depressant: {
+      ageOfFirstUse: '',
+      yearOfUse: '',
+      yearsOfExessiveUse: '',
+      specificTypeOfDrug: '',
+      routeOfAdministration: '',
+      frequency: '',
+      quantity: '',
+    },
     cannabis: {
       ageOfFirstUse: '',
       yearOfUse: '',
@@ -227,6 +236,76 @@ const initialStateFormData = {
 };
 const FormDataReducer = (state, action) => {
   switch (action.type) {
+    case 'DEPRESSANT_AGE_OF_FIRST_USE':
+      return {
+        ...state,
+        history: {
+          ...state.history,
+          depressant: {
+            ...state.history.depressant,
+            ageOfFirstUse: action.payload,
+          },
+        },
+      };
+    case 'DEPRESSANT_YEAR_OF_USE':
+      return {
+        ...state,
+        history: {
+          ...state.history,
+          depressant: {...state.history.depressant, yearOfUse: action.payload},
+        },
+      };
+    case 'DEPRESSANT_YEARS_OF_EXECCSIVE_USE':
+      return {
+        ...state,
+        history: {
+          ...state.history,
+          depressant: {
+            ...state.history.depressant,
+            yearsOfExessiveUse: action.payload,
+          },
+        },
+      };
+    case 'DEPRESSANT_SPECIFIC_TYPE_OF_DRUG':
+      return {
+        ...state,
+        history: {
+          ...state.history,
+          depressant: {
+            ...state.history.depressant,
+            specificTypeOfDrug: action.payload,
+          },
+        },
+      };
+    case 'DEPRESSANT_ROUTE_OF_ADMINISTRATION':
+      return {
+        ...state,
+        history: {
+          ...state.history,
+          depressant: {
+            ...state.history.depressant,
+            routeOfAdministration: action.payload,
+          },
+        },
+      };
+    case 'DEPRESSANT_FREQUENCY':
+      return {
+        ...state,
+        history: {
+          ...state.history,
+          depressant: {...state.history.depressant, frequency: action.payload},
+        },
+      };
+    case 'DEPRESSANT_QUANTITY':
+      return {
+        ...state,
+        history: {
+          ...state.history,
+          depressant: {...state.history.depressant, quantity: action.payload},
+        },
+      };
+
+    // cannibas
     case 'CANNABIS_AGE_OF_FIRST_USE':
       return {
         ...state,
@@ -825,6 +904,7 @@ const FormDataReducer = (state, action) => {
         social: {...state.social, dateOfRegistration: action.payload},
       };
     case 'DOB':
+      // console.log('the console value ==>', action.payload);
       return {
         ...state,
         social: {...state.social, DOB: action.payload},

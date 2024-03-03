@@ -26,6 +26,56 @@ const FormStep1 = ({placeholder}) => {
       }}>
       <View style={{marginHorizontal: 20}}>
         <Accordion
+          title="Depressants"
+          child={
+            <View>
+              <CustomInput
+                label="AGE OF FIRST USE"
+                name={'DEPRESSANT_AGE_OF_FIRST_USE'}
+                onChange={textBoxHandler}
+                state={formData.history.cannabis.ageOfFirstUse}
+              />
+              <CustomInput
+                label="YEAR OF USE"
+                name={'DEPRESSANT_YEAR_OF_USE'}
+                onChange={textBoxHandler}
+                state={formData.history.cannabis.yearOfUse}
+              />
+              <CustomInput
+                label="YEARS OF EXECCSIVE USE"
+                name={'DEPRESSANT_YEARS_OF_EXECCSIVE_USE'}
+                onChange={textBoxHandler}
+                state={formData.history.cannabis.yearsOfExessiveUse}
+              />
+              <CustomInput
+                label="SPECIFIC TYPE OF DRUG"
+                name={'DEPRESSANT_SPECIFIC_TYPE_OF_DRUG'}
+                onChange={textBoxHandler}
+                state={formData.history.cannabis.specificTypeOfDrug}
+              />
+              <CustomInput
+                label="ROUTE OF ADMINISTRATION"
+                name={'DEPRESSANT_ROUTE_OF_ADMINISTRATION'}
+                onChange={textBoxHandler}
+                state={formData.history.cannabis.routeOfAdministration}
+              />
+              <CustomInput
+                label="FREQUENCY"
+                name={'DEPRESSANT_FREQUENCY'}
+                onChange={textBoxHandler}
+                state={formData.history.cannabis.frequency}
+              />
+              <CustomInput
+                label="QUANTITY"
+                name={'DEPRESSANT_QUANTITY'}
+                onChange={textBoxHandler}
+                state={formData.history.cannabis.quantity}
+              />
+            </View>
+          }
+        />
+
+        <Accordion
           title="Cannabis"
           child={
             <View>

@@ -5,6 +5,7 @@ import CustomInput from '../CustomInputBox';
 import Datepicker from '../DatePicker';
 import CustomSwitch from '../CustomSwitch';
 import {FormDataDetailContext} from '../../Context/FormDataContext';
+import {getTheAge} from '../../utility/GetAge';
 
 const FormStep2 = ({placeholder}) => {
   const [date, setDate] = useState(new Date());
@@ -12,10 +13,16 @@ const FormStep2 = ({placeholder}) => {
   const checkBoxhandler = (name, value) => {
     dispatchFormData({type: name, payload: value});
   };
+  const [dobField, setDOBField] = useState('');
   const textBoxHandler = (type, value) => {
     dispatchFormData({type: type, payload: value});
   };
 
+  useEffect(() => {
+    if (formData.social.DOB) {
+      setDOBField(getTheAge(formData.social.DOB));
+    }
+  }, [formData.social.DOB]);
   return (
     <View style={{display: 'flex', flexDirection: 'column', rowGap: 40}}>
       <View
@@ -39,7 +46,32 @@ const FormStep2 = ({placeholder}) => {
           state={formData?.social?.registrationNo}
         />
         {/* date of registration == dateOfRegistration*/}
-        {/* <Datepicker name={'DATE_OF_REGISTRATION'} /> */}
+        <View
+          style={{
+            flex: 1,
+            flexDirection: 'row',
+            gap: 8,
+          }}>
+          <View
+            style={{
+              flex: 1,
+            }}>
+            <Datepicker name={'DOB'} />
+          </View>
+          <View
+            style={{
+              flex: 1,
+            }}>
+            <CustomInput
+              label="DOB"
+              name={'DOB'}
+              onChange={textBoxHandler}
+              state={`${dobField}`}
+              className={{marginTop: 0}}
+              disabled={false}
+            />
+          </View>
+        </View>
         <CustomInput
           label="SEX"
           name={'SEX'}
