@@ -9,6 +9,15 @@ const initialStateFormData = {
       frequency: '',
       quantity: '',
     },
+    narcotic:{
+      ageOfFirstUse: '',
+      yearOfUse: '',
+      yearsOfExessiveUse: '',
+      specificTypeOfDrug: '',
+      routeOfAdministration: '',
+      frequency: '',
+      quantity: '',
+    },
     cannabis: {
       ageOfFirstUse: '',
       yearOfUse: '',
@@ -304,7 +313,76 @@ const FormDataReducer = (state, action) => {
           depressant: {...state.history.depressant, quantity: action.payload},
         },
       };
-
+    //narcotic
+    
+    case 'Narcotic_AGE_OF_FIRST_USE':
+      return {
+        ...state,
+        history: {
+          ...state.history,
+          narcotic: {
+            ...state.history.narcotic,
+            ageOfFirstUse: action.payload,
+          },
+        },
+      };
+    case 'Narcotic_YEAR_OF_USE':
+      return {
+        ...state,
+        history: {
+          ...state.history,
+          narcotic: {...state.history.narcotic, yearOfUse: action.payload},
+        },
+      };
+    case 'Narcotic_YEARS_OF_EXECCSIVE_USE':
+      return {
+        ...state,
+        history: {
+          ...state.history,
+          narcotic: {
+            ...state.history.narcotic,
+            yearsOfExessiveUse: action.payload,
+          },
+        },
+      };
+    case 'Narcotic_SPECIFIC_TYPE_OF_DRUG':
+      return {
+        ...state,
+        history: {
+          ...state.history,
+          narcotic: {
+            ...state.history.narcotic,
+            specificTypeOfDrug: action.payload,
+          },
+        },
+      };
+    case 'Narcotic_ROUTE_OF_ADMINISTRATION':
+      return {
+        ...state,
+        history: {
+          ...state.history,
+          narcotic: {
+            ...state.history.narcotic,
+            routeOfAdministration: action.payload,
+          },
+        },
+      };
+    case 'Narcotic_FREQUENCY':
+      return {
+        ...state,
+        history: {
+          ...state.history,
+          narcotic: {...state.history.narcotic, frequency: action.payload},
+        },
+      };
+    case 'Narcotic_QUANTITY':
+      return {
+        ...state,
+        history: {
+          ...state.history,
+          narcotic: {...state.history.narcotic, quantity: action.payload},
+        },
+      };
     // cannibas
     case 'CANNABIS_AGE_OF_FIRST_USE':
       return {
