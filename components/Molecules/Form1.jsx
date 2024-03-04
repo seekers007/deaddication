@@ -74,6 +74,50 @@ const FormStep1 = ({placeholder}) => {
             </View>
           }
         />
+        <Accordion title="Narcotic Analgesics" child={<View>
+              <CustomInput
+                label="AGE OF FIRST USE"
+                name={'Narcotic_AGE_OF_FIRST_USE'}
+                onChange={textBoxHandler}
+                state={formData.history.narcotic.ageOfFirstUse}
+              />
+              <CustomInput
+                label="YEAR OF USE"
+                name={'Narcotic_YEAR_OF_USE'}
+                onChange={textBoxHandler}
+                state={formData.history.narcotic.yearOfUse}
+              />
+              <CustomInput
+                label="YEARS OF EXECCSIVE USE"
+                name={'Narcotic_YEARS_OF_EXECCSIVE_USE'}
+                onChange={textBoxHandler}
+                state={formData.history.narcotic.yearsOfExessiveUse}
+              />
+              <CustomInput
+                label="SPECIFIC TYPE OF DRUG"
+                name={'Narcotic_SPECIFIC_TYPE_OF_DRUG'}
+                onChange={textBoxHandler}
+                state={formData.history.narcotic.specificTypeOfDrug}
+              />
+              <CustomInput
+                label="ROUTE OF ADMINISTRATION"
+                name={'Narcotic_ROUTE_OF_ADMINISTRATION'}
+                onChange={textBoxHandler}
+                state={formData.history.narcotic.routeOfAdministration}
+              />
+              <CustomInput
+                label="FREQUENCY"
+                name={'Narcotic_FREQUENCY'}
+                onChange={textBoxHandler}
+                state={formData.history.narcotic.frequency}
+              />
+              <CustomInput
+                label="QUANTITY"
+                name={'Narcotic_QUANTITY'}
+                onChange={textBoxHandler}
+                state={formData.history.narcotic.quantity}
+              />
+            </View>} />
 
         <Accordion
           title="Cannabis"
