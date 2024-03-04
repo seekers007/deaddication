@@ -68,7 +68,7 @@ const FormStep2 = ({placeholder}) => {
               onChange={textBoxHandler}
               state={`${dobField}`}
               className={{marginTop: 0}}
-              disabled={false}
+              disabled={true}
             />
           </View>
         </View>

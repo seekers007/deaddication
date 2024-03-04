@@ -64,8 +64,8 @@ function HomeScreen({navigation}) {
             padding: 20,
           }}
           style={{height: '100%'}}
-          renderItem={({item, idx}) => {
-            return <RenderItem item={item} idx={idx} />;
+          renderItem={({item, index}) => {
+            return <RenderItem item={item} idx={index} />;
           }}
           keyExtractor={(item, idx) => idx}
           nestedScrollEnabled
@@ -97,10 +97,22 @@ const RenderItem = ({item, idx}) => {
     <Pressable style={styles.masterWrapperOfSubComp}>
       <View style={styles.flexRowContainer}>
         <View>
-          <Text style={styles.boldName}>
-            {item?.social?.name || ' Not Provided '}
-          </Text>
+          <View style={{flexDirection: 'row', gap: 4}}>
+            <Text
+              style={[
+                styles.boldName,
+                {
+                  color: 'black',
+                  alignSelf: 'center',
+                },
+              ]}>
+              {idx + 1}.
+            </Text>
 
+            <Text style={styles.boldName}>
+              {item?.social?.name || ' Not Provided '}
+            </Text>
+          </View>
           <Text style={{color: '#000', lineHeight: 25}}>S/o</Text>
 
           <Text style={{color: '#000'}}>

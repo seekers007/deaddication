@@ -21,7 +21,7 @@ export default function CustomInput({
       value={state}
       placeholderTextColor={'#000'}
       onChangeText={value => onChange(name, value)}
-      editable={disabled ? true : false}
+      editable={disabled ? false : true}
     />
   );
 }
