@@ -55,38 +55,35 @@ function HomeScreen({navigation}) {
   };
   return (
     <ContainerWrapper>
-      <View style={styles.fullHeight}>
-        <Text style={styles.headingText}>List of Registered Patient</Text>
-        <FlatList
-          data={data}
-          contentContainerStyle={{
-            height: '100%',
-            padding: 20,
-          }}
-          style={{height: '100%'}}
-          renderItem={({item, index}) => {
-            return <RenderItem item={item} idx={index} />;
-          }}
-          keyExtractor={(item, idx) => idx}
-          nestedScrollEnabled
-          ListEmptyComponent={
-            <View
-              style={{
-                height: '100%',
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}>
-              <Text style={{color: 'black'}}>No Records Found</Text>
-            </View>
-          }
-          refreshControl={
-            <RefreshControl refreshing={refreshing} onRefresh={handleRefresh} />
-          }
-        />
-        <Pressable style={styles.floatingBtn} onPress={handleNav}>
-          <Text style={{color: 'white'}}>Add</Text>
-        </Pressable>
-      </View>
+      <Text style={styles.headingText}>List of Registered Patient</Text>
+      {/* <ScrollView> */}
+      <FlatList
+        // nestedScrollEnabled
+        data={data}
+        contentContainerStyle={{
+          paddingHorizontal: 20,
+        }}
+        renderItem={({item, index}) => {
+          return <RenderItem item={item} idx={index} />;
+        }}
+        keyExtractor={(item, idx) => idx}
+        ListEmptyComponent={
+          <View
+            style={{
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <Text style={{color: 'black'}}>No Records Found</Text>
+          </View>
+        }
+        refreshControl={
+          <RefreshControl refreshing={refreshing} onRefresh={handleRefresh} />
+        }
+      />
+      {/* </ScrollView> */}
+      <Pressable style={styles.floatingBtn} onPress={handleNav}>
+        <Text style={{color: 'white'}}>Add</Text>
+      </Pressable>
     </ContainerWrapper>
   );
 }
@@ -97,16 +94,15 @@ const RenderItem = ({item, idx}) => {
     <Pressable style={styles.masterWrapperOfSubComp}>
       <View style={styles.flexRowContainer}>
         <View>
-          <View style={{flexDirection: 'row', gap: 4}}>
+          <View style={{gap: 4}}>
             <Text
               style={[
-                styles.boldName,
                 {
                   color: 'black',
                   alignSelf: 'center',
                 },
               ]}>
-              {idx + 1}.
+              Patient ID: {item?.social?.patientId}
             </Text>
 
             <Text style={styles.boldName}>
@@ -180,6 +176,8 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: '800',
     textAlign: 'center',
+    zIndex: 10,
+    backgroundColor: Colors.lighter,
   },
   showLess: {
     fontSize: 12,
@@ -218,13 +216,48 @@ const styles = StyleSheet.create({
     right: 40,
   },
   fullHeight: {
-    height: '100%',
+    // height: '100%',
     position: 'relative',
+    flex: 1,
+    overflow: 'scroll',
+    backgroundColor: 'blue',
   },
   sectionContainer: {
     marginTop: 32,
     paddingHorizontal: 24,
   },
+
+  emptyListContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  emptyListText: {
+    color: 'black',
+  },
 });
 
 export default HomeScreen;
+
+// <ContainerWrapper>
+//   <Text style={styles.headingText}>List of Registered Patient</Text>
+//   <FlatList
+// data={data}
+// contentContainerStyle={{paddingHorizontal: 20}}
+// renderItem={({item, index}) => {
+//   return <RenderItem item={item} idx={index} />;
+// }}
+// keyExtractor={(item, idx) => idx.toString()}
+// ListEmptyComponent={
+//   <View style={{justifyContent: 'center', alignItems: 'center'}}>
+// <Text style={{color: 'black'}}>No Records Found</Text>
+//   </View>
+// }
+// refreshControl={
+//   <RefreshControl refreshing={refreshing} onRefresh={handleRefresh} />
+// }
+//   />
+//   <Pressable style={styles.floatingBtn} onPress={handleNav}>
+// <Text style={{color: 'white'}}>Add</Text>
+//   </Pressable>
+// </ContainerWrapper>

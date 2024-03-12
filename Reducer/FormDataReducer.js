@@ -99,6 +99,7 @@ const initialStateFormData = {
   },
 
   social: {
+    patientId: '',
     name: '',
     registrationNo: '',
     dateOfRegistration: '',
@@ -968,6 +969,12 @@ const FormDataReducer = (state, action) => {
             allergiesToSpecificDrugs: action.payload,
           },
         },
+      };
+    case 'PATIENT_ID':
+      console.log('the data and id is set ==>', action.payload);
+      return {
+        ...state,
+        social: {...state.social, patientId: action.payload},
       };
     case 'NAME':
       return {...state, social: {...state.social, name: action.payload}};

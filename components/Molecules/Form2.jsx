@@ -63,7 +63,7 @@ const FormStep2 = ({placeholder}) => {
               flex: 1,
             }}>
             <CustomInput
-              label="DOB"
+              label="AGE"
               name={'DOB'}
               onChange={textBoxHandler}
               state={`${dobField}`}
